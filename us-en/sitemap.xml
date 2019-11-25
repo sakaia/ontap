@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_administration_overview.html</loc>
+      
+      <lastmod>2019-11-21T17:57:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_cloud_overview.html</loc>
+      
+      <lastmod>2019-11-15T23:17:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_cluster_performance_overview.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_dp_overview.html</loc>
+      
+      <lastmod>2019-11-15T23:17:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_get_more_information.html</loc>
+      
+      <lastmod>2019-11-12T19:09:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_key_ontap.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_nas_provision_overview.html</loc>
+      
+      <lastmod>2019-10-28T21:50:35+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_nvme_provision_overview.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_quotas_overview.html</loc>
+      
+      <lastmod>2019-11-15T06:08:35+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_san_provision_overview.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_security_overview.html</loc>
+      
+      <lastmod>2019-10-29T14:07:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/</loc>
+      
+      <lastmod>2019-11-19T02:13:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/reference_legal_notices.html</loc>
+      
+      <lastmod>2019-09-09T19:52:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
+      
+      <lastmod>2019-11-25T17:37:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_add_cache_to_local_tier.html</loc>
+      
+      <lastmod>2019-11-06T16:39:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_add_disks_to_local_tier.html</loc>
+      
+      <lastmod>2019-11-06T17:30:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_add_nodes_to_cluster.html</loc>
+      
+      <lastmod>2019-11-06T16:39:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_balance_load_by_moving_luns.html</loc>
+      
+      <lastmod>2019-11-14T21:56:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_clone_data.html</loc>
+      
+      <lastmod>2019-11-20T18:53:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html</loc>
+      
+      <lastmod>2019-10-31T06:36:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_expand_storage.html</loc>
+      
+      <lastmod>2019-10-29T14:16:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_manage_nodes.html</loc>
+      
+      <lastmod>2019-10-31T06:36:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_recover_deleted_volumes.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_save_storage_space.html</loc>
+      
+      <lastmod>2019-11-12T18:22:50+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html</loc>
+      
+      <lastmod>2019-11-20T18:53:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_upgrade_ontap.html</loc>
+      
+      <lastmod>2019-11-21T17:57:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_cloud_tier_data.html</loc>
+      
+      <lastmod>2019-11-08T18:28:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_configure_ontap.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_cp_dashboard_tour.html</loc>
+      
+      <lastmod>2019-11-12T07:21:40+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_cp_id_hot_objects.html</loc>
+      
+      <lastmod>2019-10-30T06:24:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_cp_monitor_cluster_performance_ci.html</loc>
+      
+      <lastmod>2019-10-30T15:02:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_cp_monitor_cluster_performance_sm.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_cp_monitor_cluster_performance_um.html</loc>
+      
+      <lastmod>2019-10-30T15:02:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_configure_mirror.html</loc>
+      
+      <lastmod>2019-11-18T19:51:19+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html</loc>
+      
+      <lastmod>2019-11-21T17:57:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_prepare_mirror.html</loc>
+      
+      <lastmod>2019-11-21T17:57:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_recover_snapshot.html</loc>
+      
+      <lastmod>2019-11-21T17:57:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_restore_from_destination.html</loc>
+      
+      <lastmod>2019-11-15T23:17:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_restore_from_vault.html</loc>
+      
+      <lastmod>2019-11-15T23:17:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_serve_data_from_destination.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_metrocluster_switchover_switchback.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_enable_linux_nfs.html</loc>
+      
+      <lastmod>2019-11-15T19:05:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_enable_nfs_and_smb.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_enable_windows_smb.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_flexcache.html</loc>
+      
+      <lastmod>2019-10-25T08:39:09+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_provide_client_access_with_name_services.html</loc>
+      
+      <lastmod>2019-11-15T19:05:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_export_policies.html</loc>
+      
+      <lastmod>2019-11-15T19:05:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_flexgroup.html</loc>
+      
+      <lastmod>2019-10-25T08:39:09+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_home_directories.html</loc>
+      
+      <lastmod>2019-11-15T19:05:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_linux_nfs.html</loc>
+      
+      <lastmod>2019-11-19T02:13:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_nfs_and_smb.html</loc>
+      
+      <lastmod>2019-11-01T18:26:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_vmware.html</loc>
+      
+      <lastmod>2019-11-15T19:05:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_windows_smb.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_windows_smb_troubleshoot.html</loc>
+      
+      <lastmod>2019-09-09T19:11:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_secure_client_access_with_kerberos.html</loc>
+      
+      <lastmod>2019-11-17T03:46:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nvme_provision_suse_linux.html</loc>
+      
+      <lastmod>2019-11-21T20:22:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_quotas_to_limit_resources.html</loc>
+      
+      <lastmod>2019-11-21T17:57:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_san_provision_linux.html</loc>
+      
+      <lastmod>2019-11-17T03:24:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_san_provision_vmware.html</loc>
+      
+      <lastmod>2019-11-17T03:24:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_san_provision_windows.html</loc>
+      
+      <lastmod>2019-11-21T01:31:49+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html</loc>
+      
+      <lastmod>2019-10-29T14:07:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_security_antivirus.html</loc>
+      
+      <lastmod>2019-09-10T14:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_security_encrypt_stored_data_hw.html</loc>
+      
+      <lastmod>2019-11-21T17:57:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_security_encrypt_stored_data_sw.html</loc>
+      
+      <lastmod>2019-11-21T17:57:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_security_mfa_setup.html</loc>
+      
+      <lastmod>2019-11-14T21:56:43+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Tier data to cloud</title>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Tier data to cloud" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ontap/us-en/task_cloud_tier_data.html" />
+	<meta property="og:description" content="enhance storage efficiency using data tiers" />
+  <meta property="og:image" content="https://docs.netapp.com/ontap/us-en/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="enhance storage efficiency using data tiers">
+  <meta name="keywords" content=" netapp, ontap, FabricPool, tier, cloud data, tiering">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ontap/us-en/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- LUCI CSS Content -->
+  <link rel="stylesheet" href="/ontap/us-en/common/css/esb.min.css">
+  <link rel="stylesheet" href="/ontap/us-en/common/css/netapp-library.min.css">
+  <link rel="stylesheet" href="/ontap/us-en/common/css/doc.css">
+  <link rel="stylesheet" href="/ontap/us-en/common/css/doc-components.css">
+
+  <link rel="stylesheet" href='/ontap/us-en/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/clouddocs.css' type='text/css'>
+
+  <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
+  <link rel="stylesheet" type="text/css" href="/ontap/us-en/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/ontap/us-en/css/customstyles.css"> -->
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ontap/us-en/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel='stylesheet' href='/ontap/us-en/css/netapp.css' type='text/css'>
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ontap/us-en/js/na-search.js'></script>
+  
+
+  
+  <link rel='stylesheet' href='/ontap/us-en/css/na-pagenav.css' type='text/css' id="pagenav-css">
+  <script src='/ontap/us-en/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ontap/us-en/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/prism-netapp.css' type='text/css'>
+
+  <script src='/ontap/us-en/js/clouddocs.js'></script>
+  <script src='/ontap/us-en/js/s_code_impl.js'></script>
+  <script src='/ontap/us-en/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ontap/us-en/js/toc.js'></script>
+  <script src='/ontap/us-en/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco({
+              caretHtml: '',
+              accordion: true,
+              openClass: 'active', // open
+              save: false, // leave false or nav highlighting doesn't work right
+              cookie: {
+                  name: 'navgoco',
+                  expires: false,
+                  path: '/'
+              },
+              slide: {
+                  duration: 400,
+                  easing: 'swing'
+              }
+          });
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+
+  <!-- Controls the i18n Browser Redirection -->
+  <script>
+    var siteLocales = [];
+    
+      siteLocales.push("us-en");
+    
+
+    standardizeUrl(siteLocales, "clouddocs.netapp.com", "https://docs.netapp.com");
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class="n-doc__component-detail">
+    <a href="#n-main-content" class="visually-hidden">Skip to main content</a>
+<div class="n-off-canvas-menu">
+  <div class="n-off-canvas-menu__menu">
+    <div class="n-off-canvas-menu__menu-inner">
+      <div class="n-off-canvas-menu__property-title"></div>
+      <ul class="n-off-canvas-menu__property-navigation-list">
+        <li class="n-off-canvas-menu__property-navigation-list-item ">
+          <a href="https://docs.netapp.com/us-en/" class="n-off-canvas-menu__property-navigation-link">
+            Home
+          </a>
+          <div class="n-off-canvas-menu__child-menu">
+            <ul class="n-menu__list">
+
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="n-off-canvas-menu__global-navigation-list">
+         <li class="n-off-canvas-menu__global-navigation-list-header">More From NetApp</li>
+         <li class="n-off-canvas-menu__global-navigation-list-item"><a href="#" class="n-off-canvas-menu__global-navigation-link">Netapp.com</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="n-off-canvas-menu__content-wrap">
+      <!-- Header -->
+      <header>
+  <!-- Top Hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+            <li class="n-top-hat__list-item">
+              <a href="http://www.netapp.com" class="n-top-hat__link">NetApp.com</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Property Bar -->
+  <div class="n-property-bar n-property-bar--v3">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+          <title>bars</title>
+          <use xlink:href="/ontap/us-en/common/svg/sprite.svg#bars"></use>
+        </svg></a>
+      </div>
+      <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
+        <a class="n-property-bar__property-link" href="https://docs.netapp.com">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ontap/us-en/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-property-bar__logo-svg" aria-labelledby="title">
+              <title>NetApp</title>
+              <use xlink:href="/ontap/us-en/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+          <h2 class="n-property-bar__property-name"></h2>
+        </a>
+      </div>
+
+      
+      <div id="search-demo-container" class="n-property-bar__search">
+        <div id="react-search"></div>
+      </div>
+      
+
+      <div id="ie-i18n-menu" class="n-property-bar__utils">
+        <ul class="n-property-navigation-bar__utils-list">
+          <li class="n-property-navigation-bar__utils-list-item ie-i18n-container">
+            <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle ie-i18n-link" data-menu-id="n-property-navigation-bar__menu--language-selector">
+              <span class="ie-i18n-lang">English</span>
+              <svg class="ie-i18n-icon-container" class="n-property-bar__logo-svg" aria-labelledby="title">
+                <title>globe</title>
+                <use xlink:href="/ontap/us-en/common/svg/sprite.svg#globe" class="n-icon-globe n-globe__icon"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="n-property-bar__menus">
+      <div id="n-property-navigation-bar__menu--language-selector" class="n-menu n-menu--v3">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">Select Your Language</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list">
+                
+                
+                
+                <li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="/ontap/us-en/" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+              </ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>Current Language: English
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+      <!-- Content -->
+      <main role="main" id="n-main-content" class="n-main-content">
+        <div class="n-container">
+  <div class="n-row">
+    <div class="n-doc n-doc__component-list">
+      <!-- Sidebar Column -->
+      
+      <div class="col-md-3" >
+          
+
+<ul id="mysidebar" class="nav">
+  
+
+  
+    <li><a href="index.html">ONTAP System Manager docs</a></li>
+  
+
+  
+    <li><a href="concept_key_ontap.html">Key ONTAP concepts</a></li>
+  
+
+  
+    <li><a href="task_configure_ontap.html">Configure ONTAP</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Provision SAN storage</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_san_provision_overview.html">SAN overview</a></li>
+  
+
+  
+    <li><a href="task_san_provision_vmware.html">VMware datastores</a></li>
+  
+
+  
+    <li><a href="task_san_provision_linux.html">Linux servers</a></li>
+  
+
+  
+    <li><a href="task_san_provision_windows.html">Windows servers</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Provision NVMe storage</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_nvme_provision_overview.html">NVMe overview</a></li>
+  
+
+  
+    <li><a href="task_nvme_provision_suse_linux.html">SUSE Linux</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Provision NAS storage</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_nas_provision_overview.html">NAS overview</a></li>
+  
+
+  
+    <li><a href="task_nas_provision_vmware.html">VMware datastores</a></li>
+  
+
+  
+    <li><a href="task_nas_provision_home_directories.html">Home directories</a></li>
+  
+
+  
+    <li><a href="task_nas_provision_linux_nfs.html">Linux servers</a></li>
+  
+
+  
+    <li><a href="task_nas_provision_export_policies.html">Export policies</a></li>
+  
+
+  
+    <li><a href="task_nas_provision_windows_smb.html">Windows servers</a></li>
+  
+
+  
+    <li><a href="task_nas_provision_nfs_and_smb.html">Both Windows and Linux</a></li>
+  
+
+  
+    <li><a href="task_nas_secure_client_access_with_kerberos.html">Secure client access with Kerberos</a></li>
+  
+
+  
+    <li><a href="task_nas_provide_client_access_with_name_services.html">Provide client access with name services</a></li>
+  
+
+  
+    <li><a href="task_nas_provision_flexgroup.html">Large file systems with FlexGroups</a></li>
+  
+
+  
+    <li><a href="task_nas_flexcache.html">Improve performance for multiple clients</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Enable NAS storage</a>
+      <ul>
+        
+
+  
+    <li><a href="task_nas_enable_linux_nfs.html">Enable Linux servers</a></li>
+  
+
+  
+    <li><a href="task_nas_enable_windows_smb.html">Enable Windows servers</a></li>
+  
+
+  
+    <li><a href="task_nas_enable_nfs_and_smb.html">Enable Both Windows and Linux</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Manage resources using quotas</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_quotas_overview.html">Quota overview</a></li>
+  
+
+  
+    <li><a href="task_quotas_to_limit_resources.html">Limit resource use</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Maximize security</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_security_overview.html">Security overview</a></li>
+  
+
+  
+    <li><a href="task_security_mfa_setup.html">Multi-factor authentication</a></li>
+  
+
+  
+    <li><a href="task_security_administrator_access.html">Control administrator access</a></li>
+  
+
+  
+    <li><a href="task_security_encrypt_stored_data_sw.html">Encrypt stored data (software)</a></li>
+  
+
+  
+    <li><a href="task_security_encrypt_stored_data_hw.html">Encrypt stored data (hardware)</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Protect data</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_dp_overview.html">Data protection overview</a></li>
+  
+
+  
+    <li><a href="task_dp_configure_snapshot.html">Configure Snapshot copies</a></li>
+  
+
+  
+    <li><a href="task_dp_recover_snapshot.html">Recover from Snapshot copies</a></li>
+  
+
+  
+    <li><a href="task_dp_prepare_mirror.html">Prepare for mirroring and vaulting</a></li>
+  
+
+  
+    <li><a href="task_dp_configure_mirror.html">Configure mirrors and vaults</a></li>
+  
+
+  
+    <li><a href="task_dp_serve_data_from_destination.html">Serve data from a destination</a></li>
+  
+
+  
+    <li><a href="task_dp_restore_from_destination.html">Restore from destination</a></li>
+  
+
+  
+    <li><a href="task_dp_restore_from_vault.html">Roll data back</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Extend to the cloud</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_cloud_overview.html">Cloud overview</a></li>
+  
+
+  
+    <li class="active"><a href="task_cloud_tier_data.html">Tier data to the cloud</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">View cluster performance</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_cluster_performance_overview.html">Cluster performance overview</a></li>
+  
+
+  
+    <li><a href="task_cp_dashboard_tour.html">Dashboard tour</a></li>
+  
+
+  
+    <li><a href="task_cp_id_hot_objects.html">Identify hot objects</a></li>
+  
+
+  
+    <li><a href="task_admin_search_filter_sort.html">Search, filter, and sort</a></li>
+  
+
+  
+    <li><a href="task_cp_monitor_cluster_performance_sm.html">Monitor cluster performance using System Manager</a></li>
+  
+
+  
+    <li><a href="task_cp_monitor_cluster_performance_um.html">Monitor cluster performance with Unified Manager</a></li>
+  
+
+  
+    <li><a href="task_cp_monitor_cluster_performance_ci.html">Monitor cluster performance with Cloud Insights</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Day-to-day administration</a>
+      <ul>
+        
+
+  
+    <li><a href="concept_administration_overview.html">Administration overview</a></li>
+  
+
+  
+    <li><a href="task_admin_search_filter_sort.html">Search, filter, and sort</a></li>
+  
+
+  
+    <li><a href="task_admin_balance_load_by_moving_luns.html">Balance load by moving LUNs</a></li>
+  
+
+  
+    <li><a href="task_admin_enable_new_features.html">Enable new features</a></li>
+  
+
+  
+    <li><a href="task_admin_manage_nodes.html">Manage nodes</a></li>
+  
+
+  
+    <li><a href="task_metrocluster_switchover_switchback.html">Manage MetroCluster nodes</a></li>
+  
+
+  
+    <li><a href="task_admin_recover_deleted_volumes.html">Recover deleted volumes</a></li>
+  
+
+  
+    <li><a href="task_admin_save_storage_space.html">Save storage space</a></li>
+  
+
+  
+    <li><a href="task_admin_clone_data.html">Clone data</a></li>
+  
+
+  
+    <li><a href="task_admin_upgrade_ontap.html">Update ONTAP</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Expand storage</a>
+      <ul>
+        
+
+  
+    <li><a href="task_admin_expand_storage.html">Volumes and LUNs</a></li>
+  
+
+  
+    <li><a href="task_admin_add_disks_to_local_tier.html">Disks</a></li>
+  
+
+  
+    <li><a href="task_admin_add_cache_to_local_tier.html">Cache</a></li>
+  
+
+  
+    <li><a href="task_admin_add_nodes_to_cluster.html">Nodes</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <li><a href="concept_get_more_information.html">Get more information</a></li>
+  
+
+  
+    <li><a href="reference_legal_notices.html">Notices</a></li>
+  
+
+
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+      </div>
+      
+
+      <div class="n-doc__component-detail-content n-doc__component-detail-content--show-code">
+        <!-- Begin of page container -->
+        <article class="page-content">
+          
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Tier data to cloud
+    <span>
+      
+        <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/master/task_cloud_tier_data.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Tier data to cloud](https://docs.netapp.com/us-en/ontap/task_cloud_tier_data.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+      
+    </span>
+  </h1>
+</div>
+
+<p class="page-details">
+
+<time datetime="2019-11-08 18:28:54 +0000">11/08/2019</time>
+
+
+</p>
+
+<div class="paragraph lead">
+<p>Storing data in tiers can enhance the efficiency of your storage system. You can manage storage tiers by using FabricPool to store data in a tier, based on how frequently the data is accessed.</p>
+</div>
+<div class="paragraph">
+<p>This procedure sets up an object store as the cloud tier for FabricPool.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>Storage &gt; Tiers&gt; Add Cloud Tier</strong> and select the object store provider you want to use.</p>
+</li>
+<li>
+<p>If you want to create a cloud mirror, click <strong>Add as Primary</strong>.</p>
+</li>
+</ol>
+</div>
+
+        </article>
+        <!-- Page Container -->
+      </div>
+
+      
+      <div class="page-nav-container">
+        <nav class="page-nav-fixed">
+          <div class="page-nav-title">On this page:</div>
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </nav>
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+      </main>
+
+      <!-- Footer -->
+      
+      <footer class="n-footer n-footer--v1" style="border-top: solid 10px #DFDFDF;">
+        <div class="n-footer__bottom">
+          <div class="n-container">
+            <div class="n-footer__bottom-left">
+              <div class="n-footer__copyright">
+                  <a href="//www.netapp.com/us/legal/copyright.aspx" class="n-footer__copyright-link">© 2019 NetApp, Inc.</a>
+              </div>
+              <div class="n-footer__copyright">
+                <a href="//www.netapp.com/us/legal/index.aspx" class="n-footer__copyright-link">Legal</a>
+              </div>
+              <div class="n-footer__social-links n-footer__copyright">
+                <ul class="n-footer__social-link-list">
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-blog" href="http://blog.netapp.com" target="_blank" title="blog" alt="blog">
+                      <span class="n-footer__social-link-text">blog</span>
+                      <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                        <title>blog@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#blog"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-community" href="http://community.netapp.com/" target="_blank" title="community" alt="community">
+                      <span class="n-footer__social-link-text">community</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>community@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#comments"></use>
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netappdoc" target="_blank" title="twitter" alt="twitter">
+                      <span class="n-footer__social-link-text">twitter</span>
+                      <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                        <title>twitter@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="n-footer__social-link-list-item">
+                    <a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTechCommTV/" target="_blank" title="youtube" alt="youtube">
+                      <span class="n-footer__social-link-text">youtube</span>
+                      <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                        <title>youtube@</title>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="n-footer__bottom-right">
+              <div class="n-footer__copyright">
+                <a href="https://docs.netapp.com/us-en/contribute/" class="n-footer__copyright-link">Contribute</a>
+              </div>
+              <div class="n-footer__copyright">
+                <a target="_self" class="n-footer__copyright-link" href="javascript:netapp_mailto()">Email your feedback</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <script src="/ontap/us-en/common/js/components.js"></script>
+    <script src="/ontap/us-en/common/js/doc-components.js"></script>
+
+    <!-- Elasticsearch JS -->
+    <script type="text/javascript" src='/ontap/us-en/js/bundle.js'></script>
+
+    <!-- Syntax Highlighting -->
+    <script type="text/javascript" src='/ontap/us-en/js/prism.js'></script>
+    <script type="text/javascript" src='/ontap/us-en/js/prism-curl.js'></script>
+
+  </body>
+
+  
+</html>
