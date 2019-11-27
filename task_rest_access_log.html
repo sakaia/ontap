@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Provision NAS storage for home directories</title>
+  <title>Accessing the REST API log</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Provision NAS storage for home directories" />
+  <meta property="og:title" content="Accessing the REST API log" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/ontap/task_nas_provision_home_directories.html" />
-	<meta property="og:description" content="Create volumes to provide storage for home directories using the SMB/CIFS protocol." />
+	<meta property="og:url" content="https://docs.netapp.com/ontap/task_rest_access_log.html" />
+	<meta property="og:description" content="You can access the log recording the ONTAP REST API calls made by System Manager. When displaying the log, you can also reissue an API call and review the re..." />
   <meta property="og:image" content="https://docs.netapp.com/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="Create volumes to provide storage for home directories using the SMB/CIFS protocol.">
-  <meta name="keywords" content=" netapp, ontap, provisioning, nas, provision, home, directories">
+  <meta name="description" content="You can access the log recording the ONTAP REST API calls made by System Manager. When displaying the log, you can also reissue an API call and review the re...">
+  <meta name="keywords" content=" netapp, ontap, rest api log, accessing rest api log, accessing api log">
   
   
 
@@ -365,7 +365,7 @@
   
 
   
-    <li class="active"><a href="task_nas_provision_home_directories.html">Home directories</a></li>
+    <li><a href="task_nas_provision_home_directories.html">Home directories</a></li>
   
 
   
@@ -677,7 +677,7 @@
   
 
   
-    <li><a href="task_rest_access_log.html">Access the REST API log</a></li>
+    <li class="active"><a href="task_rest_access_log.html">Access the REST API log</a></li>
   
 
 
@@ -708,11 +708,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Provision NAS storage for home directories
+  <h1 class="n-doc__component-detail-heading">Accessing the REST API log
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/master/task_nas_provision_home_directories.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Provision NAS storage for home directories](https://docs.netapp.com/us-en/ontap/task_nas_provision_home_directories.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/master/task_rest_access_log.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Accessing the REST API log](https://docs.netapp.com/us-en/ontap/task_rest_access_log.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -720,41 +720,98 @@
 
 <p class="page-details">
 
-<time datetime="2019-11-15 19:05:36 +0000">11/15/2019</time>
+<time datetime="2019-11-27 19:14:37 +0000">11/27/2019</time>
 
 
 </p>
 
 <div class="paragraph lead">
-<p>Create volumes to provide storage for home directories using the SMB/CIFS protocol.</p>
-</div>
-<div class="paragraph">
-<p>This procedure creates new volumes for home directories on an <a href="task_nas_enable_windows_smb.html">existing SMB-enabled storage VM</a>.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/workflow_nas_provision_home_directories.gif" alt="workflow for provisioning NAS storage for home directories"></span></p>
+<p>You can access the log containing a record of the ONTAP REST API calls made by System Manager. When displaying the log, you can also reissue API calls and review the output.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Create a new volume: click <strong>Storage &gt; Volumes</strong> and then click <strong>Add</strong>.</p>
+<p>At the top of the page, click <span class="image"><img src="./media/icon_double_arrow.gif" alt="Display API log"></span> to display the REST API log.</p>
+<div class="paragraph">
+<p>The most recent entries are displayed at the bottom of the page.</p>
+</div>
 </li>
 <li>
-<p>Create a home directory share: click <strong>Storage &gt; Shares</strong>, click <strong>Add</strong>, and select <strong>Home Directory</strong>.</p>
+<p>On the left, click <strong>DASHBOARD</strong> and observe the new entries being created for the API calls issued to refresh the page.</p>
 </li>
 <li>
-<p>Switch to a Windows client to verify that the share is accessible.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>In Windows Explorer, map a drive to the share in the following format: <code>\\_SMB_Server_Name__Share_Name_</code><br>
-If the share name was created with variables (%w, %d, or %u), be sure to test access with a resolved name.</p>
+<p>Click <strong>STORAGE</strong> and then click <strong>Qtrees</strong>.</p>
+<div class="paragraph">
+<p>This causes System Manager to issue a specific API call to retrieve a list of the Qtrees.</p>
+</div>
 </li>
 <li>
-<p>On the newly created drive, create a test file, and then delete the file.</p>
+<p>Locate the log entry describing the API call which has the form:</p>
+<div class="paragraph">
+<p><code>GET /api/storage/qtrees</code></p>
+</div>
+<div class="paragraph">
+<p>You will see additional HTTP query parameters included with the entry, such as <code>max_records</code>.</p>
+</div>
 </li>
-</ol>
+<li>
+<p>Click the log entry to reissue the GET API call and display the raw JSON output.</p>
+<div class="paragraph">
+<p>Example</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "records": [
+    {
+      "svm": {
+        "uuid": "19507946-e801-11e9-b984-00a0986ab770",
+        "name": "SMQA",
+        "_links": {
+          "self": {
+            "href": "/api/svm/svms/19507946-e801-11e9-b984-00a0986ab770"
+          }
+        }
+      },
+      "volume": {
+        "uuid": "1e173258-f98b-11e9-8f05-00a0986abd71",
+        "name": "vol_vol_test2_dest_dest",
+        "_links": {
+          "self": {
+            "href": "/api/storage/volumes/1e173258-f98b-11e9-8f05-00a0986abd71"
+          }
+        }
+      },
+      "id": 1,
+      "name": "test2",
+      "security_style": "mixed",
+      "unix_permissions": 777,
+      "export_policy": {
+        "name": "default",
+        "id": 12884901889,
+        "_links": {
+          "self": {
+            "href": "/api/protocols/nfs/export-policies/12884901889"
+          }
+        }
+      },
+      "path": "/vol_vol_test2_dest_dest/test2",
+      "_links": {
+        "self": {
+          "href": "/api/storage/qtrees/1e173258-f98b-11e9-8f05-00a0986abd71/1"
+        }
+      }
+    },
+    ],
+    "num_records": 1,
+    "_links": {
+      "self": {
+        "href": "/api/storage/qtrees?max_records=20&amp;fields=*&amp;name=!%22%22"
+      }
+    }
+  }</code></pre>
+</div>
 </div>
 </li>
 </ol>

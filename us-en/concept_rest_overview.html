@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Provision NAS storage for home directories</title>
+  <title>REST API log overview</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Provision NAS storage for home directories" />
+  <meta property="og:title" content="REST API log overview" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/ontap/task_nas_provision_home_directories.html" />
-	<meta property="og:description" content="Create volumes to provide storage for home directories using the SMB/CIFS protocol." />
-  <meta property="og:image" content="https://docs.netapp.com/ontap/images/logo-tophat-social.png" />
+	<meta property="og:url" content="https://docs.netapp.com/ontap/us-en/concept_rest_overview.html" />
+	<meta property="og:description" content="The REST API log captures the API calls that System Manager issues to ONTAP. You can use the log to understand the nature and sequence of the API calls neede..." />
+  <meta property="og:image" content="https://docs.netapp.com/ontap/us-en/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
@@ -17,13 +17,13 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="Create volumes to provide storage for home directories using the SMB/CIFS protocol.">
-  <meta name="keywords" content=" netapp, ontap, provisioning, nas, provision, home, directories">
+  <meta name="description" content="The REST API log captures the API calls that System Manager issues to ONTAP. You can use the log to understand the nature and sequence of the API calls neede...">
+  <meta name="keywords" content=" netapp, ontap, rest, rest api, rest api log, api log, rest overview">
   
   
 
   <!-- Icons -->
-  <link rel="icon" href="/ontap/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/ontap/us-en/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed -->
   
@@ -34,23 +34,23 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
 
   <!-- LUCI CSS Content -->
-  <link rel="stylesheet" href="/ontap/common/css/esb.min.css">
-  <link rel="stylesheet" href="/ontap/common/css/netapp-library.min.css">
-  <link rel="stylesheet" href="/ontap/common/css/doc.css">
-  <link rel="stylesheet" href="/ontap/common/css/doc-components.css">
+  <link rel="stylesheet" href="/ontap/us-en/common/css/esb.min.css">
+  <link rel="stylesheet" href="/ontap/us-en/common/css/netapp-library.min.css">
+  <link rel="stylesheet" href="/ontap/us-en/common/css/doc.css">
+  <link rel="stylesheet" href="/ontap/us-en/common/css/doc-components.css">
 
-  <link rel="stylesheet" href='/ontap/css/na-sidebar.css' type='text/css'>
-  <link rel='stylesheet' href='/ontap/css/na-search.css' type='text/css'>
-  <link rel='stylesheet' href='/ontap/css/clouddocs.css' type='text/css'>
+  <link rel="stylesheet" href='/ontap/us-en/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/na-search.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/clouddocs.css' type='text/css'>
 
   <!-- Font awesome seems to affect our GitHub Icon and generic "arrow box" for external links. -->
-  <link rel="stylesheet" type="text/css" href="/ontap/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="/ontap/css/customstyles.css"> -->
+  <link rel="stylesheet" type="text/css" href="/ontap/us-en/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/ontap/us-en/css/customstyles.css"> -->
   <!-- Controls the shadow effect for search dropdown menu -->
-  <link rel="stylesheet" href="/ontap/css/boxshadowproperties.css">
+  <link rel="stylesheet" href="/ontap/us-en/css/boxshadowproperties.css">
 
   <!-- NetApp CSS controls the technical content -->
-  <link rel='stylesheet' href='/ontap/css/netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/netapp.css' type='text/css'>
 
   
 
@@ -59,23 +59,23 @@
   <!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
   
-    <script src='/ontap/js/na-search.js'></script>
+    <script src='/ontap/us-en/js/na-search.js'></script>
   
 
   
-  <link rel='stylesheet' href='/ontap/css/na-pagenav.css' type='text/css' id="pagenav-css">
-  <script src='/ontap/js/na-pagenav.js'></script>
+  <link rel='stylesheet' href='/ontap/us-en/css/na-pagenav.css' type='text/css' id="pagenav-css">
+  <script src='/ontap/us-en/js/na-pagenav.js'></script>
   
 
-  <link rel='stylesheet' href='/ontap/css/prism.css' type='text/css'>
-  <link rel='stylesheet' href='/ontap/css/prism-netapp.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/prism-netapp.css' type='text/css'>
 
-  <script src='/ontap/js/clouddocs.js'></script>
-  <script src='/ontap/js/s_code_impl.js'></script>
-  <script src='/ontap/js/jquery.navgoco.min.js'></script>
+  <script src='/ontap/us-en/js/clouddocs.js'></script>
+  <script src='/ontap/us-en/js/s_code_impl.js'></script>
+  <script src='/ontap/us-en/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src='/ontap/js/toc.js'></script>
-  <script src='/ontap/js/customscripts.js'></script>
+  <script src='/ontap/us-en/js/toc.js'></script>
+  <script src='/ontap/us-en/js/customscripts.js'></script>
 
   <script>
       $(document).ready(function() {
@@ -192,7 +192,7 @@
       <div class="n-property-bar__menu-toggle">
         <a href="#" class="n-property-bar__menu-toggle-link"><span class="n-property-bar__menu-toggle-text">Menu</span><svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
           <title>bars</title>
-          <use xlink:href="/ontap/common/svg/sprite.svg#bars"></use>
+          <use xlink:href="/ontap/us-en/common/svg/sprite.svg#bars"></use>
         </svg></a>
       </div>
       <div class="n-property-bar__property-mark n-property-bar__property-mark--has-property-name">
@@ -200,11 +200,11 @@
           <div class="n-property-bar__logo">
             <svg class="n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
               <title>netapp-mark</title>
-              <use xlink:href="/ontap/common/svg/sprite.svg#netapp-mark"></use>
+              <use xlink:href="/ontap/us-en/common/svg/sprite.svg#netapp-mark"></use>
             </svg>
             <svg class="n-property-bar__logo-svg" aria-labelledby="title">
               <title>NetApp</title>
-              <use xlink:href="/ontap/common/svg/sprite.svg#netapp-logo"></use>
+              <use xlink:href="/ontap/us-en/common/svg/sprite.svg#netapp-logo"></use>
             </svg>
           </div>
           <h2 class="n-property-bar__property-name"></h2>
@@ -224,7 +224,7 @@
               <span class="ie-i18n-lang">English</span>
               <svg class="ie-i18n-icon-container" class="n-property-bar__logo-svg" aria-labelledby="title">
                 <title>globe</title>
-                <use xlink:href="/ontap/common/svg/sprite.svg#globe" class="n-icon-globe n-globe__icon"></use>
+                <use xlink:href="/ontap/us-en/common/svg/sprite.svg#globe" class="n-icon-globe n-globe__icon"></use>
               </svg>
             </a>
           </li>
@@ -365,7 +365,7 @@
   
 
   
-    <li class="active"><a href="task_nas_provision_home_directories.html">Home directories</a></li>
+    <li><a href="task_nas_provision_home_directories.html">Home directories</a></li>
   
 
   
@@ -673,7 +673,7 @@
         
 
   
-    <li><a href="concept_rest_overview.html">Rest log overview</a></li>
+    <li class="active"><a href="concept_rest_overview.html">Rest log overview</a></li>
   
 
   
@@ -708,11 +708,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Provision NAS storage for home directories
+  <h1 class="n-doc__component-detail-heading">REST API log overview
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/master/task_nas_provision_home_directories.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Provision NAS storage for home directories](https://docs.netapp.com/us-en/ontap/task_nas_provision_home_directories.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/master/concept_rest_overview.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[REST API log overview](https://docs.netapp.com/us-en/ontap/concept_rest_overview.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -720,44 +720,68 @@
 
 <p class="page-details">
 
-<time datetime="2019-11-15 19:05:36 +0000">11/15/2019</time>
+<time datetime="2019-11-27 19:14:37 +0000">11/27/2019</time>
 
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
-<p>Create volumes to provide storage for home directories using the SMB/CIFS protocol.</p>
+<p>The REST API log captures the API calls that System Manager issues to ONTAP. You can use the log to understand the nature and sequence of the calls needed to perform the various ONTAP administrative tasks.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-system-manager-uses-the-rest-api-and-api-log">How System Manager uses the REST API and API log</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This procedure creates new volumes for home directories on an <a href="task_nas_enable_windows_smb.html">existing SMB-enabled storage VM</a>.</p>
+<p>There are several ways that REST API calls are issued by System Manager to ONTAP.</p>
 </div>
+<div class="sect3">
+<h4 id="when-does-system-manager-issue-api-calls">When does System Manager issue API calls</h4>
 <div class="paragraph">
-<p><span class="image"><img src="./media/workflow_nas_provision_home_directories.gif" alt="workflow for provisioning NAS storage for home directories"></span></p>
+<p>Here are the most important examples of when System Manager issues ONTAP REST API calls.</p>
 </div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>Create a new volume: click <strong>Storage &gt; Volumes</strong> and then click <strong>Add</strong>.</p>
-</li>
-<li>
-<p>Create a home directory share: click <strong>Storage &gt; Shares</strong>, click <strong>Add</strong>, and select <strong>Home Directory</strong>.</p>
-</li>
-<li>
-<p>Switch to a Windows client to verify that the share is accessible.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>In Windows Explorer, map a drive to the share in the following format: <code>\\_SMB_Server_Name__Share_Name_</code><br>
-If the share name was created with variables (%w, %d, or %u), be sure to test access with a resolved name.</p>
-</li>
-<li>
-<p>On the newly created drive, create a test file, and then delete the file.</p>
-</li>
-</ol>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Automatic page refresh</dt>
+<dd>
+<p>System Manager automatically issues API calls in the background to refresh the displayed information, such as on the dashboard page.</p>
+</dd>
+<dt class="hdlist1">Display action by user</dt>
+<dd>
+<p>One or more API calls are issued when you display a specific storage resource or a collection of resources from the System Manager UI.</p>
+</dd>
+<dt class="hdlist1">Update action by user</dt>
+<dd>
+<p>An API call is issued when you add, modify, or delete an ONTAP resource from the System Manager UI.</p>
+</dd>
+</dl>
 </div>
+</div>
+<div class="sect3">
+<h4 id="reissuing-an-api-call">Reissuing an API call</h4>
+<div class="paragraph">
+<p>You can also manually reissue an API call by clicking a log entry. This displays the raw JSON output from the call.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="where-to-find-more-information">Where to find more information</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-rest-api/home.html" target="_blank" rel="noopener">ONTAP 9 REST API Developers Guide</a></p>
 </li>
-</ol>
+<li>
+<p><a href="https://devnet.netapp.com/restapi" target="_blank" rel="noopener">NetApp DevNet: ONTAP RESTful API</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 
         </article>
@@ -798,7 +822,7 @@ If the share name was created with variables (%w, %d, or %u), be sure to test ac
                       <span class="n-footer__social-link-text">blog</span>
                       <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
                         <title>blog@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#blog"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#blog"></use>
                       </svg>
                     </a>
                   </li>
@@ -807,7 +831,7 @@ If the share name was created with variables (%w, %d, or %u), be sure to test ac
                       <span class="n-footer__social-link-text">community</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>community@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#comments"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#comments"></use>
                       </svg>
                     </a>
                   </li>
@@ -817,7 +841,7 @@ If the share name was created with variables (%w, %d, or %u), be sure to test ac
                       <span class="n-footer__social-link-text">twitter</span>
                       <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
                         <title>twitter@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#twitter"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#twitter"></use>
                       </svg>
                     </a>
                   </li>
@@ -826,7 +850,7 @@ If the share name was created with variables (%w, %d, or %u), be sure to test ac
                       <span class="n-footer__social-link-text">youtube</span>
                       <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
                         <title>youtube@</title>
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#youtube"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#youtube"></use>
                       </svg>
                     </a>
                   </li>
@@ -847,15 +871,15 @@ If the share name was created with variables (%w, %d, or %u), be sure to test ac
 
     </div>
 
-    <script src="/ontap/common/js/components.js"></script>
-    <script src="/ontap/common/js/doc-components.js"></script>
+    <script src="/ontap/us-en/common/js/components.js"></script>
+    <script src="/ontap/us-en/common/js/doc-components.js"></script>
 
     <!-- Elasticsearch JS -->
-    <script type="text/javascript" src='/ontap/js/bundle.js'></script>
+    <script type="text/javascript" src='/ontap/us-en/js/bundle.js'></script>
 
     <!-- Syntax Highlighting -->
-    <script type="text/javascript" src='/ontap/js/prism.js'></script>
-    <script type="text/javascript" src='/ontap/js/prism-curl.js'></script>
+    <script type="text/javascript" src='/ontap/us-en/js/prism.js'></script>
+    <script type="text/javascript" src='/ontap/us-en/js/prism-curl.js'></script>
 
   </body>
 

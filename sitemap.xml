@@ -76,6 +76,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_rest_overview.html</loc>
+      
+      <lastmod>2019-11-27T19:14:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/concept_san_provision_overview.html</loc>
       
       <lastmod>2019-11-21T01:31:49+00:00</lastmod>
@@ -106,7 +113,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
       
-      <lastmod>2019-11-26T15:00:31+00:00</lastmod>
+      <lastmod>2019-11-27T19:41:15+00:00</lastmod>
       
     </url>
   
@@ -408,6 +415,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/task_quotas_to_limit_resources.html</loc>
       
       <lastmod>2019-11-21T17:57:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_rest_access_log.html</loc>
+      
+      <lastmod>2019-11-27T19:14:37+00:00</lastmod>
       
     </url>
   
