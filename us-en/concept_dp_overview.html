@@ -720,13 +720,19 @@
 
 <p class="page-details">
 
-<time datetime="2019-11-15 23:17:54 +0000">11/15/2019</time>
+<time datetime="2019-12-05 18:59:32 +0000">12/05/2019</time>
 
 
 </p>
 
 <div class="paragraph lead">
 <p>You can use System Manager to protect your data by creating and managing mirror relationships, vault relationships, and mirror and vault relationships. You can also create and manage the Snapshot copy policies and schedules.</p>
+</div>
+<div class="paragraph">
+<p><em>SnapMirror</em> is disaster recovery technology, designed for failover from primary storage to secondary storage at a geographically remote site. As its name implies, SnapMirror creates a replica, or mirror, of your working data in secondary storage from which you can continue to serve data in the event of a catastrophe at the primary site.</p>
+</div>
+<div class="paragraph">
+<p>A <em>vault</em> is designed for disk-to-disk Snapshot copy replication for standards compliance and other governance-related purposes. In contrast to a SnapMirror relationship, in which the destination usually contains only the Snapshot copies currently in the source volume, a vault destination typically retains point-in-time Snapshot copies created over a much longer period.</p>
 </div>
 <div class="paragraph">
 <p>System Manager provides two default protection policies: asynchronous and synchronous. You can also create custom policies.</p>
