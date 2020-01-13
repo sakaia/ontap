@@ -15,7 +15,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/concept_administration_overview.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -36,7 +36,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/concept_dp_overview.html</loc>
       
-      <lastmod>2020-01-06T15:30:16+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -50,21 +50,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/concept_key_ontap.html</loc>
       
-      <lastmod>2020-01-06T15:30:16+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/concept_nas_provision_overview.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/concept_nvme_provision_overview.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -113,14 +113,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
       
-      <lastmod>2020-01-06T15:33:20+00:00</lastmod>
+      <lastmod>2020-01-13T21:16:48+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_add_cache_to_local_tier.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -148,7 +148,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_clone_data.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -162,7 +162,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_expand_storage.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -176,7 +176,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_recover_deleted_volumes.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -197,21 +197,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_upgrade_ontap.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_cloud_tier_data.html</loc>
       
-      <lastmod>2020-01-06T15:30:16+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_configure_ontap.html</loc>
       
-      <lastmod>2020-01-06T15:30:16+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -253,14 +253,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_dp_configure_mirror.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -281,21 +281,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_dp_restore_from_destination.html</loc>
       
-      <lastmod>2020-01-06T15:30:16+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_dp_restore_from_vault.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_dp_serve_data_from_destination.html</loc>
       
-      <lastmod>2020-01-06T15:30:16+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -309,21 +309,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_enable_linux_nfs.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_enable_nfs_and_smb.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_enable_windows_smb.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -337,7 +337,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_provide_client_access_with_name_services.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -365,14 +365,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_linux_nfs.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_nfs_and_smb.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -400,7 +400,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_secure_client_access_with_kerberos.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -414,7 +414,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_quotas_to_limit_resources.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   
@@ -470,7 +470,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_security_encrypt_stored_data_sw.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
       
     </url>
   

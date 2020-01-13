@@ -730,7 +730,7 @@
 
 <p class="page-details">
 
-<time datetime="2020-01-02 21:24:03 +0000">01/02/2020</time>
+<time datetime="2020-01-13 21:09:56 +0000">01/13/2020</time>
 
 
 <span>Contributors
@@ -743,19 +743,19 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/netapp-aherbin">
-    <img  class="avatar avatar-small"
-          alt="netapp-aherbin"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/38955266?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
           width="20" height="20"
           src="https://avatars2.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-aherbin">
+    <img  class="avatar avatar-small"
+          alt="netapp-aherbin"
+          width="20" height="20"
+          src="https://avatars0.githubusercontent.com/u/38955266?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -785,7 +785,7 @@ The default setting grants full access to all users. You can add more restrictiv
 </li>
 <li>
 <p>Create a share: check <strong>Share via SMB/CIFS</strong>.<br>
-The share is created with a default Access Control List (ACL) set to Full Control for the Everyone group. You can add restrictions to the ACL later.</p>
+The share is created with a default Access Control List (ACL) set to "Full Control" for the Everyone group. You can add restrictions to the ACL later.</p>
 </li>
 </ol>
 </div>
@@ -795,7 +795,7 @@ The share is created with a default Access Control List (ACL) set to Full Contro
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Create and mount the volume using the LIF of the storage VM.</p>
+<p>Create and mount the volume using the network interface of the storage VM.</p>
 </li>
 <li>
 <p>On the newly mounted volume, create a test file, write text to it, and then delete the file.</p>

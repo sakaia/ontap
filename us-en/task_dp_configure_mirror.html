@@ -730,7 +730,7 @@
 
 <p class="page-details">
 
-<time datetime="2020-01-02 21:24:03 +0000">01/02/2020</time>
+<time datetime="2020-01-13 21:09:56 +0000">01/13/2020</time>
 
 
 <span>Contributors
@@ -743,19 +743,19 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/netapp-aherbin">
-    <img  class="avatar avatar-small"
-          alt="netapp-aherbin"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/38955266?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
           width="20" height="20"
           src="https://avatars2.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-aherbin">
+    <img  class="avatar avatar-small"
+          alt="netapp-aherbin"
+          width="20" height="20"
+          src="https://avatars0.githubusercontent.com/u/38955266?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -772,10 +772,10 @@
 </p>
 
 <div class="paragraph lead">
-<p>Create a mirror and vault of a volume for disaster recovery of the latest data and to have multiple archived versions of data to which you can roll back. Only combined mirror and vault is supported. You cannot specify separate mirror and vault policies.</p>
+<p>Create a mirror and vault of a volume to protect data in case of a disaster and to have multiple archived versions of data to which you can roll back. Only the combined mirror-and-vault policy is supported. You cannot specify separate mirror and vault policies.</p>
 </div>
 <div class="paragraph">
-<p>This procedure creates a mirror and vault on a remote cluster. The source cluster and destination cluster use intercluster LIFs for exchanging data. The procedure assumes the <a href="task_dp_prepare_mirror.html">intercluster LIFs are created and the clusters containing the volumes are peered</a> (paired). You can also peer SVMs for data protection; however, if SVMs are not peered, but permissions are enabled, SVMs are automatically peered when the protection relationship is created.</p>
+<p>This procedure creates a mirror-and-vault policy on a remote cluster. The source cluster and destination cluster use intercluster network interfaces for exchanging data. The procedure assumes the <a href="task_dp_prepare_mirror.html">intercluster network interfaces are created and the clusters containing the volumes are peered</a> (paired). You can also peer storage VMs for data protection; however, if storage VMs are not peered, but permissions are enabled, storage VMs are automatically peered when the protection relationship is created.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/workflow_configure_mirrors_and_vaults.gif" alt="workflow diagram for task to configure mirrors and vaults"></span></p>

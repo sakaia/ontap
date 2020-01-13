@@ -730,7 +730,7 @@
 
 <p class="page-details">
 
-<time datetime="2020-01-02 21:24:03 +0000">01/02/2020</time>
+<time datetime="2020-01-13 21:09:56 +0000">01/13/2020</time>
 
 
 <span>Contributors
@@ -740,6 +740,14 @@
           alt="netapp-aherbin"
           width="20" height="20"
           src="https://avatars0.githubusercontent.com/u/38955266?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars2.githubusercontent.com/u/54111336?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -759,14 +767,6 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/netapp-thomi">
-    <img  class="avatar avatar-small"
-          alt="netapp-thomi"
-          width="20" height="20"
-          src="https://avatars2.githubusercontent.com/u/54111336?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 </p>
@@ -775,7 +775,7 @@
 <p>Modify storage VMs to enable SMB servers for serving data to Windows clients.</p>
 </div>
 <div class="paragraph">
-<p>This procedure enables an existing storage VM. It assumes that configuration details are available for any authentication or security services required in your environment.</p>
+<p>This procedure enables an existing storage VM. It is assumed that configuration details are available for any authentication or security services required in your environment.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/workflow_nas_enable_windows_smb.gif" alt="workflow diagram for enabling NAS for Windows servers using SMB"></span></p>
@@ -784,7 +784,7 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Enable SMB on an existing VM: click <strong>Storage &gt; Storage VMs</strong>, select a storage VM, click <strong>Settings</strong>, and then click <span class="image"><img src="./media/icon_gear.gif" alt="settings icon"></span> in the SMB/CIFS tile.</p>
+<p>Enable SMB/CIFS on an existing VM: click <strong>Storage &gt; Storage VMs</strong>, select a storage VM, click <strong>Settings</strong>, and then click <span class="image"><img src="./media/icon_gear.gif" alt="settings icon"></span> under <strong>SMB/CIFS</strong>.</p>
 </li>
 <li>
 <p>Open the export policy of the storage VM root volume:</p>
@@ -817,17 +817,17 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Click <strong>Storage &gt; Storage VMs</strong>, select the storage VM, click <strong>Settings</strong>, and then click <span class="image"><img src="./media/icon_gear.gif" alt="settings icon"></span> in the DNS tile.</p>
+<p>Click <strong>Storage &gt; Storage VMs</strong>, select the storage VM, click <strong>Settings</strong>, and then click <span class="image"><img src="./media/icon_gear.gif" alt="settings icon"></span> under <strong>DNS</strong>.</p>
 </li>
 <li>
 <p>Switch to the DNS server and map the SMB server.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Create forward (A - Address record) and reverse (PTR - Pointer record) lookup entries to map the SMB server name to the IP address of the data LIF.</p>
+<p>Create forward (A - Address record) and reverse (PTR - Pointer record) lookup entries to map the SMB server name to the IP address of the data network interface.</p>
 </li>
 <li>
-<p>If you use NetBIOS aliases, create an Alias canonical name (CNAME resource record) lookup entry to map each alias to the IP address of the SMB server&#8217;s data LIF.</p>
+<p>If you use NetBIOS aliases, create an alias canonical name (CNAME resource record) lookup entry to map each alias to the IP address of the SMB server&#8217;s data network interface.</p>
 </li>
 </ul>
 </div>
@@ -840,10 +840,10 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Click <strong>Storage &gt; Storage VMs</strong>, select the storage VM, click <strong>Settings</strong>, and then click <span class="image"><img src="./media/icon_gear.gif" alt="settings icon"></span> in the LDAP or NIS tile.</p>
+<p>Click <strong>Storage &gt; Storage VMs</strong>, select the storage VM, click <strong>Settings</strong>, and then click <span class="image"><img src="./media/icon_gear.gif" alt="settings icon"></span> under <strong>LDAP</strong> or <strong>NIS</strong>.</p>
 </li>
 <li>
-<p>Include any changes in the name services switch file: click <span class="image"><img src="./media/icon_pencil.gif" alt="edit icon"></span>in the Name Services Switch tile.</p>
+<p>Include any changes in the name services switch file: click <span class="image"><img src="./media/icon_pencil.gif" alt="edit icon"></span> under <strong>Name Services Switch</strong>.</p>
 </li>
 </ol>
 </div>
@@ -856,7 +856,7 @@
 <p>Click <strong>Storage &gt; Storage VMs</strong>, select the storage VM, and then click <strong>Settings</strong>.</p>
 </li>
 <li>
-<p>Click <span class="image"><img src="./media/icon_arrow.gif" alt="arrow icon"></span> in the Kerberos tile and then click <strong>Add</strong>.</p>
+<p>Click <span class="image"><img src="./media/icon_arrow.gif" alt="arrow icon"></span> under <strong>Kerberos</strong> and then click <strong>Add</strong>.</p>
 </li>
 </ol>
 </div>

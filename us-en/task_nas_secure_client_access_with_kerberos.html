@@ -730,7 +730,7 @@
 
 <p class="page-details">
 
-<time datetime="2020-01-02 21:24:03 +0000">01/02/2020</time>
+<time datetime="2020-01-13 21:09:56 +0000">01/13/2020</time>
 
 
 <span>Contributors
@@ -743,19 +743,19 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/netapp-barbe">
-    <img  class="avatar avatar-small"
-          alt="netapp-barbe"
-          width="20" height="20"
-          src="https://avatars1.githubusercontent.com/u/55463742?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
           width="20" height="20"
           src="https://avatars2.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-barbe">
+    <img  class="avatar avatar-small"
+          alt="netapp-barbe"
+          width="20" height="20"
+          src="https://avatars1.githubusercontent.com/u/55463742?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -775,7 +775,7 @@
 <p>Enable Kerberos to secure storage access for NAS clients.</p>
 </div>
 <div class="paragraph">
-<p>This procedure configures Kerberos on an an existing storage VM enabled for <a href="task_nas_enable_linux_nfs.html">NFS</a> or <a href="task_nas_enable_windows_smb.html">SMB</a>. It assumes that you have already configured DNS, NTP, and <a href="task_nas_provide_client_access_with_name_services.html">LDAP</a> on the storage system.</p>
+<p>This procedure configures Kerberos on an existing storage VM enabled for <a href="task_nas_enable_linux_nfs.html">NFS</a> or <a href="task_nas_enable_windows_smb.html">SMB</a>. It is assumed that you have already configured DNS, NTP, and <a href="task_nas_provide_client_access_with_name_services.html">LDAP</a> on the storage system.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/workflow_nas_secure_client_access_with_kerberos.gif" alt="Workflow for securing client access with Kerberos"></span></p>
@@ -788,9 +788,9 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Display the relevant permissions on the SVM root volume: <code>volume show -volume <em>root_vol_name</em>-fields user,group,unix-permissions</code></p>
+<p>Display the relevant permissions on the storage VM root volume: <code>volume show -volume <em>root_vol_name</em>-fields user,group,unix-permissions</code></p>
 <div class="paragraph">
-<p>The root volume of the SVM must have the following configuration:</p>
+<p>The root volume of the storage VM must have the following configuration:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -832,7 +832,7 @@
 <li>
 <p>Display the local UNIX users: <code>vserver services name-service unix-user show -vserver <em>vserver_name</em></code></p>
 <div class="paragraph">
-<p>The SVM must have the following UNIX users configured:</p>
+<p>The storage VM should have the following UNIX users configured:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -861,7 +861,7 @@
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Note:</strong> The nfs user is not required if a Kerberos-UNIX name mapping exists for the SPN of the NFS client user; see step 5.</p>
+<p><strong>Note:</strong> The NFS user is not required if a Kerberos-UNIX name mapping exists for the SPN of the NFS client user; see step 5.</p>
 </div>
 </li>
 <li>
@@ -877,7 +877,7 @@
 <li>
 <p>Display the local UNIX groups: <code>vserver services name-service unix-group show -vserver <em>vserver_name</em></code></p>
 <div class="paragraph">
-<p>The SVM must have the following UNIX groups configured:</p>
+<p>The storage VM should have the following UNIX groups configured:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -903,7 +903,7 @@
 </table>
 </li>
 <li>
-<p>If these values are not shown use the <code>vserver services name-service unix-group modify</code> command to update them.</p>
+<p>If these values are not shown, use the <code>vserver services name-service unix-group modify</code> command to update them.</p>
 </li>
 </ol>
 </div>
@@ -916,7 +916,7 @@
 <p>Add Kerberos Realm: enter configuration details depending on KDC vendor.</p>
 </li>
 <li>
-<p>Add Network Interface to Realm: click <strong>Add</strong> and select a LIF.</p>
+<p>Add Network Interface to Realm: click <strong>Add</strong> and select a network interface.</p>
 </li>
 </ol>
 </div>
@@ -926,10 +926,10 @@
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Click <strong>Storage &gt; Storage VMs</strong>, select the storage VM, click <strong>Settings</strong>, and then click <span class="image"><img src="./media/icon_arrow.gif" alt="arrow"></span> under Name Mapping.</p>
+<p>Click <strong>Storage &gt; Storage VMs</strong>, select the storage VM, click <strong>Settings</strong>, and then click <span class="image"><img src="./media/icon_arrow.gif" alt="arrow"></span> under <strong>Name Mapping</strong>.</p>
 </li>
 <li>
-<p>Under Kerberos to UNIX, add patterns and replacements using regular expressions.</p>
+<p>Under <strong>Kerberos to UNIX</strong>, add patterns and replacements using regular expressions.</p>
 </li>
 </ol>
 </div>
