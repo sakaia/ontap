@@ -57,6 +57,8 @@
   <link rel='stylesheet' href='/ontap/us-en/css/na-pagenav.css' type='text/css'>
 
   
+  <link rel='stylesheet' href='/ontap/us-en/css/na-feature.css' type='text/css'>
+  
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -77,7 +79,10 @@
 
 <script src='/ontap/us-en/js/na-utility.js'></script>
   <script src='/ontap/us-en/js/clouddocs.js'></script>
-  <script src='/ontap/us-en/js/s_code_impl.js'></script>
+  
+  <script src='/ontap/us-en/js/s_code_impl-v2.js'></script>
+  
+
   <script src='/ontap/us-en/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/ontap/us-en/js/toc.js'></script>
@@ -832,8 +837,444 @@
   <!-- Sidebar Column -->
   
   <div class="col-md-3" >
-    
       
+
+
+
+<div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    &vellip; Download PDF
+    <span>
+      <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+    </span>
+  </a>
+</div>
+<ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;">
+  
+    
+
+    <div class="n-pdf-section">
+      <span class="n-pdf-section-title">
+        Site 
+      </span>
+    </div>
+    <li>
+      <a target="_blank" href="/ontap/us-en/pdfs/fullsite-sidebar/ONTAP_System_Manager_docs.pdf" >
+        <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+        ONTAP System Manager docs
+      </a>
+    </li>
+   
+  
+  
+
+  
+
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+        <div class="n-pdf-section">
+          <span class="n-pdf-section-title">
+            Sections
+          </span>
+        </div>
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Provision_SAN_storage.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Provision SAN storage
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+  
+
+  
+
+
+      </span>
+    </span>
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+        <div class="n-pdf-section">
+          <span class="n-pdf-section-title">
+            Sections
+          </span>
+        </div>
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Provision_NVMe_storage.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Provision NVMe storage
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+
+      </span>
+    </span>
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+        <div class="n-pdf-section">
+          <span class="n-pdf-section-title">
+            Sections
+          </span>
+        </div>
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Provision_NAS_storage.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Provision NAS storage
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Enable_NAS_storage.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Enable NAS storage
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+  
+
+
+      </span>
+    </span>
+  
+
+
+      </span>
+    </span>
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+        <div class="n-pdf-section">
+          <span class="n-pdf-section-title">
+            Sections
+          </span>
+        </div>
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Manage_resources_using_quotas.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Manage resources using quotas
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+
+      </span>
+    </span>
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+        <div class="n-pdf-section">
+          <span class="n-pdf-section-title">
+            Sections
+          </span>
+        </div>
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Maximize_security.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Maximize security
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+  
+
+  
+    <div class="n-pdf-section">
+      <span class="n-pdf-section-title">
+        This topic
+      </span>
+    </div>
+
+    <li class="active">
+      <a target="_blank" href="/ontap/us-en/pdfs/pages/task_security_encrypt_stored_data_sw.pdf" >
+        <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+        Encrypt stored data using software-based encryption
+      </a>
+    </li>
+  
+
+  
+
+
+      </span>
+    </span>
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+        <div class="n-pdf-section">
+          <span class="n-pdf-section-title">
+            Sections
+          </span>
+        </div>
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Protect_data.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Protect data
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+      </span>
+    </span>
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+        <div class="n-pdf-section">
+          <span class="n-pdf-section-title">
+            Sections
+          </span>
+        </div>
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Extend_to_the_cloud.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Extend to the cloud
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+  
+
+
+      </span>
+    </span>
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+        <div class="n-pdf-section">
+          <span class="n-pdf-section-title">
+            Sections
+          </span>
+        </div>
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/View_cluster_performance.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          View cluster performance
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+      </span>
+    </span>
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+        <div class="n-pdf-section">
+          <span class="n-pdf-section-title">
+            Sections
+          </span>
+        </div>
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Day_to_day_administration.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Day-to-day administration
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Expand_storage.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Expand storage
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+  
+
+  
+
+
+      </span>
+    </span>
+  
+
+
+      </span>
+    </span>
+  
+
+  
+    <span class="subfolders" style="display:none;">
+      
+        <div class="n-pdf-section">
+          <span class="n-pdf-section-title">
+            Sections
+          </span>
+        </div>
+      
+      <li>
+        <a target="_blank" href="/ontap/us-en/pdfs/sidebar/Rest_API.pdf" >
+          <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>
+          Rest API
+        </a>
+      </li>
+      <span>
+        
+  
+
+  
+
+
+      </span>
+    </span>
+  
+
+  
+
+  
+
+
+</ul>
+
+<script>
+  $("#toggleContainerPdf li.active").parents('li').toggle('display');
+  $("#toggleContainerPdf li.active").parents('span.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+  });
+</script>
+
+
 
 <ul id="mysidebar" class="nav">
   
@@ -1271,7 +1712,6 @@
 <time datetime="2020-01-13 21:09:56 +0000">01/13/2020</time>
 
 
-
 <span>Contributors
   
   <a target="_blank" href="https://github.com/netapp-aherbin">
@@ -1299,6 +1739,14 @@
   </a>
   
 </span>
+
+
+  <span>
+    <a target="_blank" href="/ontap/us-en/pdfs/pages/task_security_encrypt_stored_data_sw.pdf" role="button">
+      <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/> Download PDF of this topic
+    </a>
+  </span>
+
 
 </p>
 
