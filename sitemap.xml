@@ -13,6 +13,20 @@
   
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_admin_downloading_data_report.html</loc>
+      
+      <lastmod>2020-10-14T18:01:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_admin_viewing_managing_network.html</loc>
+      
+      <lastmod>2020-10-14T18:01:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/concept_administration_overview.html</loc>
       
       <lastmod>2020-01-13T21:09:56+00:00</lastmod>
@@ -22,7 +36,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/concept_cloud_overview.html</loc>
       
-      <lastmod>2020-06-17T15:58:30+00:00</lastmod>
+      <lastmod>2020-10-09T20:10:50+00:00</lastmod>
       
     </url>
   
@@ -50,7 +64,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/concept_key_ontap.html</loc>
       
-      <lastmod>2020-01-23T21:34:45+00:00</lastmod>
+      <lastmod>2020-10-09T19:07:19+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_metrocluster_manage_nodes.html</loc>
+      
+      <lastmod>2020-10-27T18:16:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_nas_file_system_analytics_overview.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
@@ -65,6 +93,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/concept_nvme_provision_overview.html</loc>
       
       <lastmod>2020-01-13T21:09:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_object_provision_overview.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
@@ -90,9 +125,23 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/concept_san_smbc_overview.html</loc>
+      
+      <lastmod>2020-10-05T18:49:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/concept_security_overview.html</loc>
       
       <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
       
     </url>
   
@@ -111,9 +160,128 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/search.html</loc>
+      
+      <lastmod>2020-11-05T14:33:35+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
       
-      <lastmod>2020-10-30T17:04:32+00:00</lastmod>
+      <lastmod>2020-11-05T14:33:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_creating_a_common_snapshot_copy.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_performing_a_planned_failover.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_reversing_and_resynchronizing_a_relationship_after_failover_of_a_non-tie-breaker_deployment.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_what_happens_during_an_automatic_unplanned_failover.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_confirm_the_ontap_cluster_configuration.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_creating_a_consistency_group_relationship.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_high_level_deployment_workflow.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_initializing_a_consistency_group.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_installing_the_ontap_mediator.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_mapping_luns_to_the_application_hosts.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_additional_restrictions_and_limitations.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_ontap_access_options.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_preparing_to_use_the_ontap_cli.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_preparing_to_use_the_ontap_mediator.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_prerequisites.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_summary_of_deployment_best_practices.html</loc>
+      
+      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
       
     </url>
   
@@ -134,7 +302,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_add_nodes_to_cluster.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-10-09T19:07:19+00:00</lastmod>
       
     </url>
   
@@ -142,6 +310,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_balance_load_by_moving_luns.html</loc>
       
       <lastmod>2020-01-06T15:30:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_balance_load_by_moving_volumes.html</loc>
+      
+      <lastmod>2020-10-27T18:16:46+00:00</lastmod>
       
     </url>
   
@@ -162,7 +337,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_expand_storage.html</loc>
       
-      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
+      <lastmod>2020-10-27T18:16:46+00:00</lastmod>
       
     </url>
   
@@ -174,9 +349,23 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_manage_storage_efficiency_policies.html</loc>
+      
+      <lastmod>2020-10-27T18:16:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_modify_qos.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_recover_deleted_volumes.html</loc>
       
-      <lastmod>2020-06-17T20:00:32+00:00</lastmod>
+      <lastmod>2020-10-14T19:33:58+00:00</lastmod>
       
     </url>
   
@@ -190,7 +379,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html</loc>
       
-      <lastmod>2020-06-17T15:40:18+00:00</lastmod>
+      <lastmod>2020-10-09T19:07:19+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_troubleshoot_hardware_problems.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_admin_update_firmware.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
@@ -202,9 +405,30 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_cloud_create_tiering_object_tags.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_cloud_enable_inactive_data_reporting.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_cloud_local_bucket_tier_data.html</loc>
+      
+      <lastmod>2020-10-27T19:25:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_cloud_tier_data.html</loc>
       
-      <lastmod>2020-06-17T15:58:30+00:00</lastmod>
+      <lastmod>2020-11-02T20:11:16+00:00</lastmod>
       
     </url>
   
@@ -272,6 +496,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_reactivate_storage_vm.html</loc>
+      
+      <lastmod>2020-10-05T18:49:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_dp_recover_snapshot.html</loc>
       
       <lastmod>2020-06-17T15:58:30+00:00</lastmod>
@@ -281,14 +512,35 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_dp_restore_from_destination.html</loc>
       
-      <lastmod>2020-06-17T15:58:30+00:00</lastmod>
+      <lastmod>2020-10-26T21:21:25+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_dp_restore_from_vault.html</loc>
       
-      <lastmod>2020-06-17T15:58:30+00:00</lastmod>
+      <lastmod>2020-10-22T22:22:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_restore_to_new_volume.html</loc>
+      
+      <lastmod>2020-10-05T18:49:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_resynch_a_destination_vm.html</loc>
+      
+      <lastmod>2020-10-22T22:22:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_dp_reverse_resynch_a_destination_vm.html</loc>
+      
+      <lastmod>2020-10-05T18:49:57+00:00</lastmod>
       
     </url>
   
@@ -300,9 +552,44 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_metrocluster_ANDU_upgrade.html</loc>
+      
+      <lastmod>2020-10-27T18:16:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_metrocluster_configure.html</loc>
+      
+      <lastmod>2020-10-27T18:16:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_metrocluster_peering.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_metrocluster_setup.html</loc>
+      
+      <lastmod>2020-10-27T18:16:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_metrocluster_switchover_switchback.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-10-23T15:11:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_metrocluster_troubleshooting.html</loc>
+      
+      <lastmod>2020-10-23T15:11:04+00:00</lastmod>
       
     </url>
   
@@ -316,7 +603,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_enable_nfs_and_smb.html</loc>
       
-      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
+      <lastmod>2020-10-09T19:07:19+00:00</lastmod>
       
     </url>
   
@@ -328,51 +615,65 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_file_system_analytics_enable.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_nas_file_system_analytics_view.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_flexcache.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-10-14T19:44:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_provide_client_access_with_name_services.html</loc>
       
-      <lastmod>2020-06-17T15:58:30+00:00</lastmod>
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_export_policies.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_flexgroup.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-10-14T19:44:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_home_directories.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_linux_nfs.html</loc>
       
-      <lastmod>2020-06-17T15:58:30+00:00</lastmod>
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_nfs_and_smb.html</loc>
       
-      <lastmod>2020-06-17T15:58:30+00:00</lastmod>
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
@@ -386,28 +687,63 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_windows_smb.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/us-en/ontap/task_nas_provision_windows_smb_troubleshoot.html</loc>
-      
-      <lastmod>2019-09-09T19:11:46+00:00</lastmod>
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nas_secure_client_access_with_kerberos.html</loc>
       
-      <lastmod>2020-01-13T21:09:56+00:00</lastmod>
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_nvme_provision_suse_linux.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-10-14T19:44:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_object_provision.html</loc>
+      
+      <lastmod>2020-08-19T13:01:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_object_provision_add_s3_users_groups.html</loc>
+      
+      <lastmod>2020-10-09T20:10:50+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_object_provision_buckets.html</loc>
+      
+      <lastmod>2020-10-27T19:25:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_object_provision_enable_s3_server.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_object_provision_manage_bucket_access.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_object_provision_manage_svm_access.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
@@ -426,23 +762,44 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_san_configure_mediator.html</loc>
+      
+      <lastmod>2020-10-05T18:49:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_san_configure_protection_for_business_continuity.html</loc>
+      
+      <lastmod>2020-10-12T19:22:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_san_provision_linux.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-10-14T19:44:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_san_provision_vmware.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-10-14T19:44:52+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_san_provision_windows.html</loc>
       
-      <lastmod>2020-01-02T21:24:03+00:00</lastmod>
+      <lastmod>2020-10-14T19:44:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_san_reestablish_original_relationship_after_unplanned_failover.html</loc>
+      
+      <lastmod>2020-10-05T18:49:57+00:00</lastmod>
       
     </url>
   
@@ -450,13 +807,6 @@
       <loc>https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html</loc>
       
       <lastmod>2020-01-02T21:24:03+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/us-en/ontap/task_security_antivirus.html</loc>
-      
-      <lastmod>2019-09-10T14:00:58+00:00</lastmod>
       
     </url>
   
@@ -471,6 +821,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/task_security_encrypt_stored_data_sw.html</loc>
       
       <lastmod>2020-01-13T21:09:56+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/task_security_file_access_issues.html</loc>
+      
+      <lastmod>2020-11-04T22:47:24+00:00</lastmod>
       
     </url>
   
