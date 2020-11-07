@@ -539,9 +539,6 @@
   
 
 
-  
-
-
 
 
           
@@ -601,8 +598,6 @@
         Performing a planned failover
       </a></li><li class=" "><a class="na-navbar-padding" href="smbc_admin_what_happens_during_an_automatic_unplanned_failover.html">
         What happens during an automatic unplanned failover
-      </a></li><li class=" "><a class="na-navbar-padding" href="smbc_admin_reversing_and_resynchronizing_a_relationship_after_failover_of_a_non-tie-breaker_deployment.html">
-        Reversing and resynchronizing a relationship after failover of a non-tie-breaker deployment
       </a></li></ul></li></ul>
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
@@ -625,7 +620,7 @@
 <p class="page-details">
   
     
-    <time datetime="2020-11-04 21:40:48 +0000">11/04/2020</time>
+    <time datetime="2020-11-07 19:10:09 +0000">11/07/2020</time>
     
   
 
@@ -666,7 +661,7 @@
 <p>Only two-node HA clusters are supported</p>
 </li>
 <li>
-<p>Both nodes must be either AFF or ASA (no mixing)</p>
+<p>Both clusters must be either AFF or ASA (no mixing)</p>
 </li>
 </ul>
 </div>
@@ -702,7 +697,19 @@
 <div class="ulist">
 <ul>
 <li>
-<p>SnapMirror synchronous (SM-Sync) or premium bundle license applied on both clusters</p>
+<p>SnapMirror synchronous (SM-S) license must be applied on both clusters</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If your ONTAP storage systems were purchased before June 2019, click <a href="https://mysupport.netapp.com/NOW/knowledge/docs/olio/guides/master_lickey/" target="_blank" rel="noopener">NetApp ONTAP Master License Keys</a> to get the required SM-S license.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ul>
 </div>
