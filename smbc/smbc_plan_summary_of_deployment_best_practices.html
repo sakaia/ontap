@@ -583,12 +583,12 @@
         Installing the ONTAP Mediator
       </a></li><li class=" "><a class="na-navbar-padding" href="smbc_install_confirm_the_ontap_cluster_configuration.html">
         Confirm the ONTAP cluster configuration
-      </a></li><li class=" "><a class="na-navbar-padding" href="smbc_install_mapping_luns_to_the_application_hosts.html">
-        Mapping LUNs to the application hosts
       </a></li><li class=" "><a class="na-navbar-padding" href="smbc_install_creating_a_consistency_group_relationship.html">
         Creating a consistency group relationship
       </a></li><li class=" "><a class="na-navbar-padding" href="smbc_install_initializing_a_consistency_group.html">
         Initializing a consistency group
+      </a></li><li class=" "><a class="na-navbar-padding" href="smbc_install_mapping_luns_to_the_application_hosts.html">
+        Mapping LUNs to the application hosts
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Administration</div>
       </a>
@@ -620,7 +620,7 @@
 <p class="page-details">
   
     
-    <time datetime="2020-11-07 18:10:46 +0000">11/07/2020</time>
+    <time datetime="2020-11-13 22:01:04 +0000">11/13/2020</time>
     
   
 
@@ -631,6 +631,14 @@
           alt="dmp-netapp"
           width="20" height="20"
           src="https://avatars2.githubusercontent.com/u/50704017?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-lenida">
+    <img  class="avatar avatar-small"
+          alt="netapp-lenida"
+          width="20" height="20"
+          src="https://avatars0.githubusercontent.com/u/54081920?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -664,10 +672,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Replicated LUNs in the secondary cluster must be mapped to the host and the IO paths must be discovered at the time of configuration.</p>
+<p>Replicated LUNs in the secondary cluster must be mapped to the host and the I/O paths to the LUNs from both the primary and secondary cluster must be discovered at the time of host configuration.</p>
 </li>
 <li>
-<p>After an out of sync (OOS) event exceeds 80 seconds, or after an automatic unplanned failover, it is important to rescan the host to ensure that there is not any I/O path loss.  For more information, see the Host Documentation on Rescan of IO Paths.</p>
+<p>After an out of sync (OOS) event exceeds 80 seconds, or after an automatic unplanned failover, it is important to rescan the host LUN I/O path to ensure that there is no I/O path loss.  For more information, see the respective host OS vendor&#8217;s documentation on rescan of LUN I/O paths.</p>
 </li>
 </ul>
 </div>

@@ -583,12 +583,12 @@
         Installing the ONTAP Mediator
       </a></li><li class=" "><a class="na-navbar-padding" href="smbc_install_confirm_the_ontap_cluster_configuration.html">
         Confirm the ONTAP cluster configuration
-      </a></li><li class=" "><a class="na-navbar-padding" href="smbc_install_mapping_luns_to_the_application_hosts.html">
-        Mapping LUNs to the application hosts
       </a></li><li class=" "><a class="na-navbar-padding" href="smbc_install_creating_a_consistency_group_relationship.html">
         Creating a consistency group relationship
       </a></li><li class=" "><a class="na-navbar-padding" href="smbc_install_initializing_a_consistency_group.html">
         Initializing a consistency group
+      </a></li><li class=" "><a class="na-navbar-padding" href="smbc_install_mapping_luns_to_the_application_hosts.html">
+        Mapping LUNs to the application hosts
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Administration</div>
       </a>
@@ -620,7 +620,7 @@
 <p class="page-details">
   
     
-    <time datetime="2020-11-05 19:53:55 +0000">11/05/2020</time>
+    <time datetime="2020-11-13 22:01:04 +0000">11/13/2020</time>
     
   
 
@@ -631,6 +631,14 @@
           alt="dmp-netapp"
           width="20" height="20"
           src="https://avatars2.githubusercontent.com/u/50704017?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-lenida">
+    <img  class="avatar avatar-small"
+          alt="netapp-lenida"
+          width="20" height="20"
+          src="https://avatars0.githubusercontent.com/u/54081920?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -677,6 +685,18 @@
 </div>
 <div class="sect2">
 <h3 id="volumes">Volumes</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The limit is on the number of endpoints and not the number of relationships. A consistency group with 12 volumes contributes 12 endpoints on both the source and destination.A SnapMirror Synchronous relationship with both source and destination volumes on the same HA pair contributes 2 endpoints.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>The maximum endpoints per platform are included in the following table.</p>
 </div>
