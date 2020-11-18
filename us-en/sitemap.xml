@@ -162,14 +162,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/search.html</loc>
       
-      <lastmod>2020-11-16T19:22:04+00:00</lastmod>
+      <lastmod>2020-11-18T21:28:59+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
       
-      <lastmod>2020-11-16T19:21:55+00:00</lastmod>
+      <lastmod>2020-11-18T21:28:52+00:00</lastmod>
       
     </url>
   
@@ -177,6 +177,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_creating_a_common_snapshot_copy.html</loc>
       
       <lastmod>2020-11-13T22:01:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_monitoring.html</loc>
+      
+      <lastmod>2020-11-16T22:58:38+00:00</lastmod>
       
     </url>
   
@@ -212,6 +219,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_high_level_deployment_workflow.html</loc>
       
       <lastmod>2020-11-05T19:53:55+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_initialize_the_ontap_mediator.html</loc>
+      
+      <lastmod>2020-11-16T22:58:38+00:00</lastmod>
       
     </url>
   
