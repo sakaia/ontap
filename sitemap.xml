@@ -162,14 +162,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/search.html</loc>
       
-      <lastmod>2020-11-20T16:42:06+00:00</lastmod>
+      <lastmod>2020-11-20T20:59:39+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
       
-      <lastmod>2020-11-20T16:41:58+00:00</lastmod>
+      <lastmod>2020-11-20T20:59:31+00:00</lastmod>
       
     </url>
   
@@ -268,6 +268,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_mapping_luns_to_the_application_hosts.html</loc>
       
       <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_intro_additional_info.html</loc>
+      
+      <lastmod>2020-11-20T20:23:41+00:00</lastmod>
       
     </url>
   
@@ -380,6 +387,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_troubleshoot_planned_failover_unsuccessful.html</loc>
       
       <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_troubleshoot_sm_delete_fails_when_fence_is_set_on_dest.html</loc>
+      
+      <lastmod>2020-11-20T20:23:41+00:00</lastmod>
       
     </url>
   
