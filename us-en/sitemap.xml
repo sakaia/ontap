@@ -162,154 +162,224 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/search.html</loc>
       
-      <lastmod>2020-11-20T03:02:11+00:00</lastmod>
+      <lastmod>2020-11-20T16:42:06+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
       
-      <lastmod>2020-11-20T03:02:03+00:00</lastmod>
+      <lastmod>2020-11-20T16:41:58+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_add_and_remove_volumes_in_consistency_groups.html</loc>
       
-      <lastmod>2020-11-19T03:54:31+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_converting_existing_relationships_to_smbc.html</loc>
       
-      <lastmod>2020-11-19T03:54:31+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_creating_a_common_snapshot_copy.html</loc>
       
-      <lastmod>2020-11-13T22:01:04+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_monitoring.html</loc>
       
-      <lastmod>2020-11-16T22:58:38+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_performing_a_planned_failover.html</loc>
       
-      <lastmod>2020-11-13T22:01:04+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_upgrade_and_revert_considerations.html</loc>
       
-      <lastmod>2020-11-19T21:59:39+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_admin_what_happens_during_an_automatic_unplanned_failover.html</loc>
       
-      <lastmod>2020-11-19T03:54:31+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_confirm_the_ontap_cluster_configuration.html</loc>
       
-      <lastmod>2020-11-07T20:20:27+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_creating_a_consistency_group_relationship.html</loc>
       
-      <lastmod>2020-11-07T22:19:14+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_high_level_deployment_workflow.html</loc>
       
-      <lastmod>2020-11-05T19:53:55+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_initialize_the_ontap_mediator.html</loc>
       
-      <lastmod>2020-11-16T22:58:38+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_initializing_a_consistency_group.html</loc>
       
-      <lastmod>2020-11-07T20:20:27+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_installing_the_ontap_mediator.html</loc>
       
-      <lastmod>2020-11-19T03:54:31+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_install_mapping_luns_to_the_application_hosts.html</loc>
       
-      <lastmod>2020-11-07T22:00:03+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_intro_basic_failover_recovery_concepts.html</loc>
+      
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_intro_overview.html</loc>
+      
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_intro_role_of_mediator.html</loc>
+      
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_intro_terminology.html</loc>
+      
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_additional_restrictions_and_limitations.html</loc>
       
-      <lastmod>2020-11-13T22:01:04+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_ontap_access_options.html</loc>
       
-      <lastmod>2020-11-04T21:40:48+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_preparing_to_use_the_ontap_cli.html</loc>
       
-      <lastmod>2020-11-07T19:10:09+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_preparing_to_use_the_ontap_mediator.html</loc>
       
-      <lastmod>2020-11-07T19:10:09+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_prerequisites.html</loc>
       
-      <lastmod>2020-11-13T22:01:04+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_plan_summary_of_deployment_best_practices.html</loc>
       
-      <lastmod>2020-11-13T22:01:04+00:00</lastmod>
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_troubleshoot_aufo_not_triggered_on_site_b.html</loc>
+      
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_troubleshoot_failure_creating_snapmirror_relationship.html</loc>
+      
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_troubleshoot_link_between_site_b_and_mediator_down.html</loc>
+      
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_troubleshoot_link_between_site_b_and_mediator_down.html</loc>
+      
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_troubleshoot_mediator_not_reachable_or_quorum_false.html</loc>
+      
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_troubleshoot_planned_failover_unsuccessful.html</loc>
+      
+      <lastmod>2020-11-20T06:12:29+00:00</lastmod>
       
     </url>
   
