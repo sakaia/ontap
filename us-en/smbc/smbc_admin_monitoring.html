@@ -19,7 +19,7 @@
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
   <meta name="description" content="There are several SM-BC components and operations you can monitor.">
-  <meta name="keywords" content=" SM-BC, SMBC, monitoring, Mediator status, planned failover status, automatic unplanned failover status, SM-BC status">
+  <meta name="keywords" content=" SM-BC, SMBC, monitoring, Mediator status, EMS, errors, planned failover status, automatic unplanned failover status, SM-BC status">
   
   
 
@@ -603,6 +603,12 @@
   
 
 
+  
+
+
+  
+
+
 
 
           
@@ -634,6 +640,15 @@
         </li>
         <span>
           
+  
+
+
+  
+
+
+  
+
+
   
 
 
@@ -737,6 +752,10 @@
         Converting existing relationships to SM-BC relationships
       </a></li><li class=" "><a class="na-navbar-padding" href="smbc_admin_upgrade_and_revert_considerations.html">
         SM-BC upgrade and revert considerations
+      </a></li><li class=" "><a class="na-navbar-padding" href="smbc_admin_removing_an_smbc_configuration.html">
+        Removing an SM-BC configuration
+      </a></li><li class=" "><a class="na-navbar-padding" href="smbc_admin_removing_ontap_mediator.html">
+        Removing ONTAP Mediator
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Troubleshooting</div>
       </a>
@@ -754,6 +773,12 @@
         Link between Site A to Mediator Down and Site B down
       </a></li><li class=" "><a class="na-navbar-padding" href="smbc_troubleshoot_sm_delete_fails_when_fence_is_set_on_dest.html">
         SM-BC SnapMirror delete operation fails when fence is set on destination volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="smbc_troubleshoot_volume_move_stuck_when_primary_down.html">
+        Volume move operation stuck when primary site is down
+      </a></li><li class=" "><a class="na-navbar-padding" href="smbc_troubleshoot_snapmirror_release_fails.html">
+        SnapMirror release operation fails when unable to delete Snapshot copy
+      </a></li><li class=" "><a class="na-navbar-padding" href="smbc_troubleshoot_vol_move_reference_snapshot_showing_as_newest.html">
+        Volume move reference Snapshot copy shows as the newest
       </a></li></ul></li></ul>
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
@@ -776,7 +801,7 @@
 <p class="page-details">
   
     
-    <time datetime="2020-11-20 06:12:29 +0000">11/20/2020</time>
+    <time datetime="2020-12-04 18:50:42 +0000">12/04/2020</time>
     
   
 
@@ -812,7 +837,7 @@
 <div class="sect2">
 <h3 id="ontap-mediator">ONTAP mediator</h3>
 <div class="paragraph">
-<p>During normal operation, the Mediator state should be connected. If it is in any other state, this might indicate an error condition. You can review the EMS messages to determine the error and appropriate corrective actions.</p>
+<p>During normal operation, the Mediator state should be connected. If it is in any other state, this might indicate an error condition. You can review the Event Management System (EMS) messages to determine the error and appropriate corrective actions.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -836,7 +861,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sm.mediator.unusable</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mediator is unusable due to a corrupted mediator server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mediator is unusable due to a corrupted Mediator server</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sm.mediator.misconfigured</p></td>
@@ -899,6 +924,31 @@
 <pre>ClusterA::&gt; snapmirror show</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>You can also review the following messages to determine if there is an error and take the appropriate corrective actions.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">EMS Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smbc.pfo.failed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMBC planned failover operation failed. Destination path:</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smbc.pfo.start. Destination path:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMBC planned failover operation started</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="automatic-unplanned-failover-operations">Automatic unplanned failover operations</h3>
@@ -920,6 +970,39 @@ Last Progress Update: -
   Error Reason codes: -</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>You can also review the following messages to determine if there is an error and take the appropriate corrective actions.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">EMS Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smbc.aufo.failed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SnapMirror automatic planned failover operation failed. Destination path:</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smbc.aufo.start. Destination path:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMBC planned failover operation started</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smbc.aufo.completed:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SnapMirror automatic planned failover operation completed. Destination path:</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smbc.aufo.failover.incapable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">block.giveback.during.aufo</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="sm-bc-availability">SM-BC availability</h3>
