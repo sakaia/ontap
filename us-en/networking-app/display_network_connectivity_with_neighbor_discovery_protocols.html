@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head class="at-element-marker">
+  <title>Display network connectivity with neighbor discovery protocols</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Display network connectivity with neighbor discovery protocols" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ontap/us-en/networking-app/display_network_connectivity_with_neighbor_discovery_protocols.html" />
+	<meta property="og:description" content="Use neighbor discovery protocols to view network connectivity between a pair of physical or virtual systems and their network interfaces" />
+  <meta property="og:image" content="https://docs.netapp.com/ontap/us-en/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="Use neighbor discovery protocols to view network connectivity between a pair of physical or virtual systems and their network interfaces">
+  <meta name="keywords" content=" display, view, show, network, connectivity, neighbor, discovery, protocol, ndp, cdp, cisco, link, layer, lldp">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ontap/us-en/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ontap/us-en/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ontap/us-en/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ontap/us-en/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ontap/us-en/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ontap/us-en/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ontap/us-en/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ontap/us-en/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ontap/us-en/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ontap/us-en/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ontap/us-en/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/na-pagenav.css' type='text/css'>
+
+  
+
+  
+  <link rel='stylesheet' href='/ontap/us-en/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ontap/us-en/js/na-search.js'></script>
+  
+
+  
+  <script src='/ontap/us-en/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ontap/us-en/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/us-en/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ontap/us-en/js/na-utility.js'></script>
+  <script src='/ontap/us-en/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ontap/us-en/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ontap/us-en/js/toc.js'></script>
+  <script src='/ontap/us-en/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+
+  <!-- Controls the i18n Browser Redirection -->
+  <script>
+    
+    var siteLocales = [];
+    
+      siteLocales.push("us-en");
+    
+
+    standardizeUrl(siteLocales, "clouddocs.netapp.com", "https://docs.netapp.com");
+    
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Product and Solutions</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Support and Training</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Community</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ontap/us-en/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ontap/us-en/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ontap/us-en/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" data-type="widget" data-placeholder="Search Documentation" data-no-results-found="Search for {suggestion}." data-did-you-mean="No results were found for {query}" data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" data-results-found="{hitCount} results found"  ></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar"><!-- Start Language Selector -->
+    <div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">English</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">Select Your Language</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list">
+                
+                
+                
+                
+                <li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="/ontap/us-en/" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+              </ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>Current Language: English
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+        <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">Home</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">Documentation</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ontap/us-en/">ONTAP&nbsp;System&nbsp;Manager</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          Display network connectivity with neighbor discovery protocols
+        </li>
+      </ul>
+    </div>
+
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" >
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">PDFs<span>
+    </span>
+  </a>
+</div>
+<ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;">
+</ul>
+
+<script>
+  $("#toggleContainerPdf li.active").parents('li').toggle('display');
+  $("#toggleContainerPdf li.active").parents('span.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+  });
+</script><ul id="mysidebar" class="nav"></ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      
+
+
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Display network connectivity with neighbor discovery protocols</h1>
+</div>
+
+<p class="page-details">
+  
+    
+    <time datetime="2020-12-09 21:51:53 +0000">12/09/2020</time>
+    
+  
+
+<span>Contributors
+  <a target="_blank" href="https://github.com/netapp-barbe">
+    <img  class="avatar avatar-small"
+          alt="netapp-barbe"
+          width="20" height="20"
+          src="https://avatars1.githubusercontent.com/u/55463742?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+  <span>
+    <a target="_blank" href="/ontap/us-en/pdfs/pages/networking-app/display_network_connectivity_with_neighbor_discovery_protocols.pdf" role="button">
+      <img src="/ontap/us-en/images/pdf.png" width="20" height="20"/>Download PDF of this page</a>
+  </span>
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>In a data center, you can use neighbor discovery protocols to view network connectivity between a pair of physical or virtual systems and their network interfaces. ONTAP supports two neighbor discovery protocols: Cisco Discovery Protocol (CDP) and Link Layer Discovery Protocol (LLDP).</p>
+</div>
+<div class="paragraph">
+<p><strong>About this task</strong></p>
+</div>
+<div class="paragraph">
+<p>Neighbor discovery protocols enable you to automatically discover and view information about directly connected protocol-enabled devices in a network. Each device advertises identification, capabilities, and connectivity information. This information is transmitted in Ethernet frames to a multicast MAC address and is received by all neighboring protocol-enabled devices.</p>
+</div>
+<div class="paragraph">
+<p>For two devices to become neighbors, each must have a protocol enabled and correctly configured. Discovery protocol functionality is limited to directly connected networks. Neighbors can include protocol-enabled devices such as switches, routers, bridges, and so on. ONTAP supports two neighbor discovery protocols, which can be used individually or together.</p>
+</div>
+<div class="paragraph">
+<p><strong>Cisco Discovery Protocol (CDP)</strong></p>
+</div>
+<div class="paragraph">
+<p>CDP is a proprietary link layer protocol developed by Cisco Systems. It is enabled by default in ONTAP for cluster ports, but must be enabled explicitly for data ports.</p>
+</div>
+<div class="paragraph">
+<p><strong>Link Layer Discovery Protocol (LLDP)</strong></p>
+</div>
+<div class="paragraph">
+<p>LLDP is a vendor-neutral protocol specified in the standards document IEEE 802.1AB. It must be enabled explicitly for all ports.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-cdp-to-detect-network-connectivity">Use CDP to detect network connectivity</h3>
+<div class="paragraph">
+<p>Using CDP to detect network connectivity consists of reviewing deployment considerations, enabling it on data ports, viewing neighbor devices, and adjusting CDP configuration values as needed. CDP is enabled by default on cluster ports.</p>
+</div>
+<div class="paragraph">
+<p>CDP must also be enabled on any switches and routers before information about neighbor devices can be displayed.</p>
+</div>
+<div class="paragraph">
+<p>CDP is also used by the cluster switch health monitor to automatically discover your cluster and management network switches.</p>
+</div>
+<div class="paragraph">
+<p><strong>Related information</strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html" target="_blank" rel="noopener">System administration</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Considerations for using CDP</strong></p>
+</div>
+<div class="paragraph">
+<p>By default, CDP-compliant devices send CDPv2 advertisements. CDP-compliant devices send CDPv1 advertisements only when they receive CDPv1 advertisements. ONTAP supports only CDPv1. Therefore, when an ONTAP node sends CDPv1 advertisements, CDP-compliant neighboring devices send back CDPv1 advertisements.</p>
+</div>
+<div class="paragraph">
+<p>You should consider the following information before enabling CDP on a node:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CDP is always enabled on cluster ports.</p>
+</li>
+<li>
+<p>CDP is disabled, by default, on all non-cluster ports.</p>
+</li>
+<li>
+<p>CDP is supported for all ports.</p>
+</li>
+<li>
+<p>CDP advertisements are sent and received by ports that are in the up state.</p>
+</li>
+<li>
+<p>CDP must be enabled on both the transmitting and receiving devices for sending and receiving CDP advertisements.</p>
+</li>
+<li>
+<p>CDP advertisements are sent at regular intervals, and you can configure the time interval.</p>
+</li>
+<li>
+<p>When IP addresses are changed for a LIF, the node sends the updated information in the next CDP advertisement.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Sometimes when LIFs are changed on the node, the CDP information is not updated at the receiving device side (for example, a switch). If you encounter such a problem, you should configure the network interface of the node to the down status and then to the up status.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Only IPv4 addresses are advertised in CDP advertisements.</p>
+</li>
+<li>
+<p>For physical network ports with VLANs, all of the LIFs configured on the VLANs on that port are advertised.</p>
+</li>
+<li>
+<p>For physical ports that are part of an interface group, all of the IP addresses configured on that interface group are advertised on each physical port.</p>
+</li>
+<li>
+<p>For an interface group that hosts VLANs, all of the LIFs configured on the interface group and the VLANs are advertised on each of the network ports.</p>
+</li>
+<li>
+<p>For packets with MTU size equal to or greater than 1,500 bytes, only the number of LIFs that can fit into a 1500 MTU-sized packet is advertised.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="enable-or-disable-cdp">Enable or disable CDP</h4>
+<div class="paragraph">
+<p>To discover and send advertisements to CDP-compliant neighboring devices, CDP must be enabled on each node of the cluster. By default, CDP is enabled on all cluster ports of a node and disabled on all non-cluster ports of a node.</p>
+</div>
+<div class="paragraph">
+<p><strong>About this task</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>cdpd.enable</code> option controls whether CDP is enabled or disabled on the ports of a node:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>on enables CDP on non-cluster ports.</p>
+</li>
+<li>
+<p>off disables CDP on non-cluster ports; you cannot disable CDP on cluster ports.When CDP is disabled on a port that is connected to a CDP-compliant device, network traffic might not be optimized.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Steps</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Display the current CDP setting for a node, or for all nodes in a cluster:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">To view the CDP setting of&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Enter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run - node &lt;node_name&gt; options cdpd.enabled</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes in a cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options cdpd.enabled</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Enable or disable CDP on all ports of a node, or on all ports of all nodes in a cluster:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">To enable or disable CDP on&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Enter&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run -node node_name options cdpd.enable {on or off}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes in a cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options cdpd.enable {on or off}</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-cdp-neighbor-information">View CDP neighbor information</h4>
+<div class="paragraph">
+<p>You can view information about the neighboring devices that are connected to each port of the nodes of your cluster, provided that the port is connected to a CDP-compliant device. You can use the <code>network device-discovery show -protocol cdp</code> command to view neighbor information.</p>
+</div>
+<div class="paragraph">
+<p><strong>About this task</strong></p>
+</div>
+<div class="paragraph">
+<p>Because CDP is always enabled for cluster ports, CDP neighbor information is always displayed for those ports. CDP must be enabled on non-cluster ports for neighbor information to appear for those ports.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step</strong></p>
+</div>
+<div class="paragraph">
+<p>Display information about all CDP-compliant devices that are connected to the ports on a node in the cluster:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network device-discovery show -node node -protocol cdp</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following command shows the neighbors that are connected to the ports on node cluster-1_01:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network device-discovery show -node sti2650-212 -protocol cdp
+Node/       Local  Discovered
+Protocol    Port   Device (LLDP: ChassisID)  Interface         Platform
+----------- ------ ------------------------- ----------------  ----------------
+sti2650-212/cdp
+            e0M    RTP-LF810-510K37.gdl.eng.netapp.com(SAL1942R8JS)
+                                             Ethernet1/14      N9K-C93120TX
+            e0a    CS:RTP-CS01-510K35        0/8               CN1610
+            e0b    CS:RTP-CS01-510K36        0/8               CN1610
+            e0c    RTP-LF350-510K34.gdl.eng.netapp.com(FDO21521S76)
+                                             Ethernet1/21      N9K-C93180YC-FX
+            e0d    RTP-LF349-510K33.gdl.eng.netapp.com(FDO21521S4T)
+                                             Ethernet1/22      N9K-C93180YC-FX
+            e0e    RTP-LF349-510K33.gdl.eng.netapp.com(FDO21521S4T)
+                                             Ethernet1/23      N9K-C93180YC-FX
+            e0f    RTP-LF349-510K33.gdl.eng.netapp.com(FDO21521S4T)
+                                             Ethernet1/24      N9K-C93180YC-FX</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output lists the Cisco devices that are connected to each port of the specified node. The <code>Remote Capability</code> column specifies the capabilities of each remote device. The following capabilities are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>R—Router</p>
+</li>
+<li>
+<p>T—Transparent bridge</p>
+</li>
+<li>
+<p>B—Source-route bridge</p>
+</li>
+<li>
+<p>S—Switch</p>
+</li>
+<li>
+<p>H—Host</p>
+</li>
+<li>
+<p>I—IGMP</p>
+</li>
+<li>
+<p>r—Repeater</p>
+</li>
+<li>
+<p>P—Phone</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configure-the-hold-time-for-cdp-messages">Configure the hold time for CDP messages</h4>
+<div class="paragraph">
+<p>Hold time is the period of time for which CDP advertisements are stored in cache in neighboring CDP-compliant devices. Hold time is advertised in each CDPv1 packet and is updated whenever a CDPv1 packet is received by a node.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The value of the cdpd.holdtime option should be set to the same value on both nodes of an HA pair.</p>
+</li>
+<li>
+<p>The default hold time value is 180 seconds, but you can enter values ranging from 10 seconds to 255 seconds.</p>
+</li>
+<li>
+<p>If an IP address is removed before the hold time expires, the CDP information is cached until the hold time expires.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Steps</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Display the current CDP hold time for a node, or for all nodes in a cluster:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">To view the hold time of&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Enter&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run -node node_name options cdpd.holdtime</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes in a cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options cdpd.holdtime</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Configure the CDP hold time on all ports of a node, or on all ports of all nodes in a cluster:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">To set the hold time on&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Enter&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run -node node_name options cdpd.holdtime holdtime</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes in a cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options cdpd.holdtime holdtime</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="set-the-interval-for-sending-cdp-advertisements">Set the interval for sending CDP advertisements</h4>
+<div class="paragraph">
+<p>CDP advertisements are sent to CDP neighbors at periodic intervals. You can increase or decrease the interval for sending CDP advertisements depending on network traffic and changes in the network topology.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The value of the cdpd.interval option should be set to the same value on both nodes of an HA pair.</p>
+</li>
+<li>
+<p>The default interval is 60 seconds, but you can enter a value from 5 seconds to 900 seconds.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Steps</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Display the current CDP advertisement time interval for a node, or for all nodes in a cluster:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">To view the interval for&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Enter&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run -node node_name options cdpd.interval</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes in a cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options cdpd.interval</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Configure the interval for sending CDP advertisements for all ports of a node, or for all ports of all nodes in a cluster:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">To set the interval for&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Enter&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run -node node_name options cdpd.interval interval</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes in a cluster</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options cdpd.interval interval</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-or-clear-cdp-statistics">View or clear CDP statistics</h4>
+<div class="paragraph">
+<p>You can view the CDP statistics for the cluster and non-cluster ports on each node to detect potential network connectivity issues. CDP statistics are cumulative from the time they were last cleared.</p>
+</div>
+<div class="paragraph">
+<p><strong>About this task</strong></p>
+</div>
+<div class="paragraph">
+<p>Because CDP is always enabled for cluster ports, CDP statistics are always displayed for traffic on those ports. CDP must be enabled on non-cluster ports for statistics to appear for those ports.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step</strong></p>
+</div>
+<div class="paragraph">
+<p>Display or clear the current CDP statistics for all ports on a node:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">If you want to&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Enter&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View the CDP statistics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run -node node_name cdpd show-stats</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clear the CDP statistics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run -node node_name cdpd zero-stats</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Example of showing and clearing statistics</strong></p>
+</div>
+<div class="paragraph">
+<p>The following command shows the CDP statistics before they are cleared. The output displays the total number of packets that have been sent and received since the last time the statistics were cleared.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>run -node node1 cdpd show-stats
+
+RECEIVE
+ Packets:         9116  | Csum Errors:       0  | Unsupported Vers:  4561
+ Invalid length:     0  | Malformed:         0  | Mem alloc fails:      0
+ Missing TLVs:       0  | Cache overflow:    0  | Other errors:         0
+
+TRANSMIT
+ Packets:         4557  | Xmit fails:        0  | No hostname:          0
+ Packet truncated:   0  | Mem alloc fails:   0  | Other errors:         0
+
+OTHER
+ Init failures:      0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following command clears the CDP statistics:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>run -node node1 cdpd zero-stats</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>run -node node1 cdpd show-stats
+
+RECEIVE
+ Packets:            0  | Csum Errors:       0  | Unsupported Vers:     0
+ Invalid length:     0  | Malformed:         0  | Mem alloc fails:      0
+ Missing TLVs:       0  | Cache overflow:    0  | Other errors:         0
+
+TRANSMIT
+ Packets:            0  | Xmit fails:        0  | No hostname:          0
+ Packet truncated:   0  | Mem alloc fails:   0  | Other errors:         0
+
+OTHER
+ Init failures:      0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After the statistics are cleared, they begin to accumulate after the next CDP advertisement is sent or received.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-lldp-to-detect-network-connectivity">Use LLDP to detect network connectivity</h3>
+<div class="paragraph">
+<p>Using LLDP to detect network connectivity consists of reviewing deployment considerations, enabling it on all ports, viewing neighbor devices, and adjusting LLDP configuration values as needed.</p>
+</div>
+<div class="paragraph">
+<p>LLDP must also be enabled on any switches and routers before information about neighbor devices can be displayed.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP currently reports the following type-length-value structures (TLVs):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Chassis ID</p>
+</li>
+<li>
+<p>Port ID</p>
+</li>
+<li>
+<p>Time-To-Live (TTL)</p>
+</li>
+<li>
+<p>System name</p>
+<div class="paragraph">
+<p>The system name TLV is not sent on CNA devices.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Certain converged network adapters (CNAs), such as the X1143 adapter and the UTA2 onboard ports, contain offload support for LLDP:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>LLDP offload is used for Data Center Bridging (DCB).</p>
+</li>
+<li>
+<p>Displayed information might differ between the cluster and the switch.</p>
+<div class="paragraph">
+<p>For example, the Chassis ID and Port ID data displayed by the switch might be different for CNA and non-CNA ports, but the data displayed by the cluster is consistent for these port types.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The LLDP specification defines access to the collected information through an SNMP MIB. However, ONTAP does not currently support the LLDP MIB.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="enable-or-disable-lldp">Enable or disable LLDP</h4>
+<div class="paragraph">
+<p>To discover and send advertisements to LLDP-compliant neighboring devices, LLDP must be enabled on each node of the cluster. By default, LLDP is disabled on all ports of a node.</p>
+</div>
+<div class="paragraph">
+<p><strong>About this task</strong></p>
+</div>
+<div class="paragraph">
+<p>The lldp.enable option controls whether LLDP is enabled or disabled on the ports of a node:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>on</code> enables LLDP on all ports.</p>
+</li>
+<li>
+<p><code>off</code> disables LLDP on all ports.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Steps</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Display the current LLDP setting for a node, or for all nodes in a cluster:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Single node: <code>run -node node_name options lldp.enable</code></p>
+</li>
+<li>
+<p>All nodes: options <code>lldp.enable</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enable or disable LLDP on all ports of a node, or on all ports of all nodes in a cluster:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">To enable or disable LLDP on&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Enter&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A node</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run -node node_name options lldp.enable {on</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">off}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All nodes in a cluster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options lldp.enable {on</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">off}</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Single node:</p>
+<div class="literalblock">
+<div class="content">
+<pre>run -node node_name options lldp.enable {on|off}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>All nodes:</p>
+<div class="literalblock">
+<div class="content">
+<pre>options lldp.enable {on|off}</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-lldp-neighbor-information">View LLDP neighbor information</h4>
+<div class="paragraph">
+<p>You can view information about the neighboring devices that are connected to each port of the nodes of your cluster, provided that the port is connected to an LLDP-compliant device. You use the network device-discovery show command to view neighbor information.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step</strong></p>
+</div>
+<div class="paragraph">
+<p>Display information about all LLDP-compliant devices that are connected to the ports on a node in the cluster:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network device-discovery show -node node -protocol lldp</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following command shows the neighbors that are connected to the ports on node cluster-1_01. The output lists the LLDP-enabled devices that are connected to each port of the specified node. If the <code>-protocol</code> option is omitted, the output also lists CDP-enabled devices.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>network device-discovery show -node cluster-1_01 -protocol lldp
+Node/       Local  Discovered
+Protocol    Port   Device                    Interface         Platform
+----------- ------ ------------------------- ----------------  ----------------
+cluster-1_01/lldp
+            e2a    0013.c31e.5c60            GigabitEthernet1/36
+            e2b    0013.c31e.5c60            GigabitEthernet1/35
+            e2c    0013.c31e.5c60            GigabitEthernet1/34
+            e2d    0013.c31e.5c60            GigabitEthernet1/33</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adjust-the-interval-for-transmitting-lldp-advertisements">Adjust the interval for transmitting LLDP advertisements</h4>
+<div class="paragraph">
+<p>LLDP advertisements are sent to LLDP neighbors at periodic intervals. You can increase or decrease the interval for sending LLDP advertisements depending on network traffic and changes in the network topology.</p>
+</div>
+<div class="paragraph">
+<p><strong>About this task</strong></p>
+</div>
+<div class="paragraph">
+<p>The default interval recommended by IEEE is 30 seconds, but you can enter a value from 5 seconds to 300 seconds.</p>
+</div>
+<div class="paragraph">
+<p><strong>Steps</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Display the current LLDP advertisement time interval for a node, or for all nodes in a cluster:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Single node:</p>
+<div class="literalblock">
+<div class="content">
+<pre>run -node node_name options lldp.xmit.interval</pre>
+</div>
+</div>
+</li>
+<li>
+<p>All nodes:</p>
+<div class="literalblock">
+<div class="content">
+<pre>options lldp.xmit.interval</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Adjust the interval for sending LLDP advertisements for all ports of a node, or for all ports of all nodes in a cluster:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Single node:</p>
+<div class="literalblock">
+<div class="content">
+<pre>run -node node_name options lldp.xmit.interval interval</pre>
+</div>
+</div>
+</li>
+<li>
+<p>All nodes:</p>
+<div class="literalblock">
+<div class="content">
+<pre>options lldp.xmit.interval interval</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adjust-the-time-to-live-value-for-lldp-advertisements">Adjust the time-to-live value for LLDP advertisements</h4>
+<div class="paragraph">
+<p>Time-To-Live (TTL) is the period of time for which LLDP advertisements are stored in cache in neighboring LLDP-compliant devices. TTL is advertised in each LLDP packet and is updated whenever an LLDP packet is received by a node. TTL can be modified in outgoing LLDP frames.</p>
+</div>
+<div class="paragraph">
+<p><strong>About this task</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>TTL is a calculated value, the product of the transmit interval (lldp.xmit.interval) and the hold multiplier (lldp.xmit.hold) plus one.</p>
+</li>
+<li>
+<p>The default hold multiplier value is 4, but you can enter values ranging from 1 to 100.</p>
+</li>
+<li>
+<p>The default TTL is therefore 121 seconds, as recommended by IEEE, but by adjusting the transmit interval and hold multiplier values, you can specify a value for outgoing frames from 6 seconds to 30001 seconds.</p>
+</li>
+<li>
+<p>If an IP address is removed before the TTL expires, the LLDP information is cached until the TTL expires.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Steps</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Display the current hold multiplier value for a node, or for all nodes in a cluster:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Single node:</p>
+<div class="literalblock">
+<div class="content">
+<pre>run -node node_name options lldp.xmit.hold</pre>
+</div>
+</div>
+</li>
+<li>
+<p>All nodes:</p>
+<div class="literalblock">
+<div class="content">
+<pre>options lldp.xmit.hold</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Adjust the hold multiplier value on all ports of a node, or on all ports of all nodes in a cluster:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Single node:</p>
+<div class="literalblock">
+<div class="content">
+<pre>run -node node_name options lldp.xmit.hold hold_value</pre>
+</div>
+</div>
+</li>
+<li>
+<p>All nodes:</p>
+<div class="literalblock">
+<div class="content">
+<pre>options lldp.xmit.hold hold_value</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div class="page-nav-contribute"  >
+      <div class="page-nav-contribute-title">CONTRIBUTE</div>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/master/networking-app/display_network_connectivity_with_neighbor_discovery_protocols.adoc" class="btn btn-default githubEditButton" role="button"><img src="/ontap/us-en/images/github.png" class="github-icon" />Edit on GitHub</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Display network connectivity with neighbor discovery protocols](https://docs.netapp.com/us-en/ontap/networking-app/display_network_connectivity_with_neighbor_discovery_protocols.html)" class="btn btn-default githubEditButton" role="button"><img src="/ontap/us-en/images/github.png" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >Contributor's Guide</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2020 NetApp</a>
+            </li>
+            <li class="n-footer__language">
+              <!-- <a class="n-footer__corp-link modaal" href="#n-language-selector-menu" data-modaal-scope="modaal_154143812867626e487b1a03c9"> -->
+              <a class="n-footer__corp-link modaal" href="#n-language-selector-menu">
+                <svg class="n-icon-baseline-language" aria-labelledby="title">
+                  <title>netapp-globe</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#globe"></use>
+                </svg>
+                English
+              </a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/us-en/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Have feedback for our website?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">Let us know</a>
+  <a href="https://docs.netapp.com/us-en/announcements/" class="n-footer__copyright">Announcements</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ontap/us-en/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ontap/us-en/js/prism.js'></script>
+      <script type="text/javascript" src='/ontap/us-en/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ontap/us-en/js/www-ntap.js'></script>
+  </body>
+
+  
+</html>

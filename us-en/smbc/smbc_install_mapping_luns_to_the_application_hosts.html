@@ -9,7 +9,7 @@
   <meta property="og:title" content="Mapping LUNs to the application hosts" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/ontap/us-en/smbc/smbc_install_mapping_luns_to_the_application_hosts.html" />
-	<meta property="og:description" content="You must create an igroup so you can map LUNs to the initiator on the application host." />
+	<meta property="og:description" content="You must create an igroup on each cluster so you can map LUNs to the initiator on the application host." />
   <meta property="og:image" content="https://docs.netapp.com/ontap/us-en/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
@@ -18,7 +18,7 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="You must create an igroup so you can map LUNs to the initiator on the application host.">
+  <meta name="description" content="You must create an igroup on each cluster so you can map LUNs to the initiator on the application host.">
   <meta name="keywords" content=" SM-BC, SMBC, igroup, LUN, initiator, application host, cluster configure">
   
   
@@ -785,11 +785,27 @@
 <p class="page-details">
   
     
-    <time datetime="2020-11-20 06:12:29 +0000">11/20/2020</time>
+    <time datetime="2020-12-09 16:04:11 +0000">12/09/2020</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-lenida">
+    <img  class="avatar avatar-small"
+          alt="netapp-lenida"
+          width="20" height="20"
+          src="https://avatars0.githubusercontent.com/u/54081920?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/dmp-netapp">
+    <img  class="avatar avatar-small"
+          alt="dmp-netapp"
+          width="20" height="20"
+          src="https://avatars2.githubusercontent.com/u/50704017?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -802,11 +818,11 @@
 </p>
 
 <div class="paragraph lead">
-<p>You must create an igroup so you can map LUNs to the initiator on the application host.</p>
+<p>You must create an igroup on each cluster so you can map LUNs to the initiator on the application host.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
-<p>You should perform this configuration at the source cluster.</p>
+<p>You should perform this configuration on both the source and destination clusters.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
