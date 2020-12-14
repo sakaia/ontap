@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head class="at-element-marker">
+  <title>Recover from an incorrectly configured cluster LIF</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Recover from an incorrectly configured cluster LIF" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ontap/networking-app/recover_from_an_incorrectly_configured_cluster_lif.html" />
+	<meta property="og:description" content="How to identify and correct a cluster that has been misconfigured" />
+  <meta property="og:image" content="https://docs.netapp.com/ontap/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="How to identify and correct a cluster that has been misconfigured">
+  <meta name="keywords" content=" misconfigured, misconfigurations, incorrect, incorrectly, switch, switches, switched, cable, physical, wiring, wired, reachability, port, cluster">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ontap/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ontap/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ontap/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ontap/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ontap/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ontap/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ontap/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ontap/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ontap/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ontap/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ontap/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/css/na-pagenav.css' type='text/css'>
+
+  
+
+  
+  <link rel='stylesheet' href='/ontap/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ontap/js/na-search.js'></script>
+  
+
+  
+  <script src='/ontap/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ontap/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ontap/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ontap/js/na-utility.js'></script>
+  <script src='/ontap/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ontap/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ontap/js/toc.js'></script>
+  <script src='/ontap/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+
+  <!-- Controls the i18n Browser Redirection -->
+  <script>
+    
+    var siteLocales = [];
+    
+      siteLocales.push("us-en");
+    
+
+    standardizeUrl(siteLocales, "clouddocs.netapp.com", "https://docs.netapp.com");
+    
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Product and Solutions</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Support and Training</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Community</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ontap/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ontap/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ontap/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" data-type="widget" data-placeholder="Search Documentation" data-no-results-found="No results were found for {query}" data-did-you-mean="Search for {suggestion}." data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" data-results-found="{hitCount} results found"  ></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar"><!-- Start Language Selector -->
+    <div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">English</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">Select Your Language</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list">
+                
+                
+                
+                
+                <li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="/ontap/us-en/" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+              </ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>Current Language: English
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+        <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">Home</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">Documentation</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ontap/">ONTAP&nbsp;System&nbsp;Manager</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          Recover from an incorrectly configured cluster LIF
+        </li>
+      </ul>
+    </div>
+
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" >
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">PDFs<span>
+    </span>
+  </a>
+</div>
+<ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><div class="n-pdf-section">
+      <span class="n-pdf-section-title">Site</span>
+    </div>
+    <li>
+      <a target="_blank" href="/ontap/pdfs/fullsite-networking-app_sidebar/ONTAP_____Network_Management_Documentation.pdf" >
+        <img src="/ontap/images/pdf.png" width="20" height="20"/>
+        ONTAP 9.8 Network Management Documentation
+      </a>
+    </li>
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              Sections
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Network_management_for_ONTAP_____and_later.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Network management for ONTAP 9.8 and later
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Upgrade_considerations.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Upgrade considerations
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Networking_components_of_a_cluster.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Networking components of a cluster
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Workflow_NAS_path_failover.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Workflow NAS path failover
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Configure_network_ports__cluster_administrators_only_.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Configure network ports (cluster administrators only)
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Configure_IPspaces__cluster_administrators_only_.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Configure IPspaces (cluster administrators only)
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Configure_broadcast_domains__cluster_administrators_only_.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Configure broadcast domains (cluster administrators only)
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Configure_failover_groups_and_policies_for_LIFs.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Configure failover groups and policies for LIFs
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Configure_subnets__cluster_administrators_only_.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Configure subnets (cluster administrators only)
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Configure_LIFs__cluster_administrators_only_.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Configure LIFs (cluster administrators only)
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+    <div class="n-pdf-section">
+  <span class="n-pdf-section-title">This page</span>
+</div>
+
+<li class="active">
+  <a target="_blank" href="/ontap/pdfs/pages/networking-app/recover_from_an_incorrectly_configured_cluster_lif.pdf" >
+    <img src="/ontap/images/pdf.png" width="20" height="20"/>
+    Recover from an incorrectly configured cluster LIF
+  </a>
+</li>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Configure_host_name_resolution.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Configure host-name resolution
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Balance_network_loads_to_optimize_user_traffic__cluster_administrators_only_.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Balance network loads to optimize user traffic (cluster administrators only)
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Secure_your_network.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Secure your network
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Configure_QoS_marking__cluster_administrators_only_.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Configure QoS marking (cluster administrators only)
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Manage_SNMP_on_the_cluster__cluster_administrators_only_.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Manage SNMP on the cluster (cluster administrators only)
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/Manage_routing_in_an_SVM.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            Manage routing in an SVM
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/ONTAP_port_usage_on_a_storage_system.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            ONTAP port usage on a storage system
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ontap/pdfs/networking-app_sidebar/View_network_information.pdf" >
+            <img src="/ontap/images/pdf.png" width="20" height="20"/>
+            View network information
+          </a>
+        </li>
+        <span>
+          
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+</ul>
+
+<script>
+  $("#toggleContainerPdf li.active").parents('li').toggle('display');
+  $("#toggleContainerPdf li.active").parents('span.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+  });
+</script><ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="index.html">
+        Network management for ONTAP 9.8 and later contents
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Network management for ONTAP 9.8 and later</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="decide_whether_to_use_this_network_management_guide.html">
+        Decide whether to use this network management guide
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Upgrade considerations</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="network_features_by_release.html">
+        Network features by release
+      </a></li><li class=" "><a class="na-navbar-padding" href="verify_your_network_configuration_after_upgrading.html">
+        Verify your network configuration after upgrading
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Networking components of a cluster</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="networking_components_of_a_cluster_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="network_cabling_guidelines.html">
+        Network cabling guidelines
+      </a></li><li class=" "><a class="na-navbar-padding" href="relationship_between_broadcast_domains,_failover_groups,_and_failover_policies.html">
+        Relationship between broadcast domains, failover groups, and failover policies
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Workflow NAS path failover</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="workflow__nas_path_failover_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="worksheet_for_nas_path_failover_configuration.html">
+        Worksheet for NAS path failover configuration
+      </a></li><li class=" "><a class="na-navbar-padding" href="create_ipspaces.html">
+        Create IPspaces
+      </a></li><li class=" "><a class="na-navbar-padding" href="move_broadcast_domains.html">
+        Move broadcast domains
+      </a></li><li class=" "><a class="na-navbar-padding" href="repair_port_reachability.html">
+        Repair port reachability
+      </a></li><li class=" "><a class="na-navbar-padding" href="create_svms.html">
+        Create SVMs
+      </a></li><li class=" "><a class="na-navbar-padding" href="create_lifs.html">
+        Create LIFs
+      </a></li><li class=" "><a class="na-navbar-padding" href="configure_dns_services.html">
+        Configure DNS services
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Configure network ports (cluster administrators only)</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="configure_network_ports_@cluster_administrators_only@_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="combine_physical_ports_to_create_interface_groups.html">
+        Combine physical ports to create interface groups
+      </a></li><li class=" "><a class="na-navbar-padding" href="configure_vlans_over_physical_ports.html">
+        Configure VLANs over physical ports
+      </a></li><li class=" "><a class="na-navbar-padding" href="modify_network_port_attributes.html">
+        Modify network port attributes
+      </a></li><li class=" "><a class="na-navbar-padding" href="modify_mtu_setting_for_interface_group_ports.html">
+        Modify MTU setting for interface group ports
+      </a></li><li class=" "><a class="na-navbar-padding" href="monitor_the_health_of_network_ports.html">
+        Monitor the health of network ports
+      </a></li><li class=" "><a class="na-navbar-padding" href="monitor_the_reachability_of_network_ports.html">
+        Monitor the reachability of network ports
+      </a></li><li class=" "><a class="na-navbar-padding" href="convert_40gbe_nic_ports_into_multiple_10gbe_ports_for_10gbe_connectivity.html">
+        Convert 40GbE NIC ports into multiple 10GbE ports for 10GbE connectivity
+      </a></li><li class=" "><a class="na-navbar-padding" href="removing_a_nic_from_the_node.html">
+        Removing a NIC from the node
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Configure IPspaces (cluster administrators only)</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="configure_ipspaces_@cluster_administrators_only@_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="example_of_using_ipspaces.html">
+        Example of using IPspaces
+      </a></li><li class=" "><a class="na-navbar-padding" href="standard_properties_of_ipspaces.html">
+        Standard properties of IPspaces
+      </a></li><li class=" "><a class="na-navbar-padding" href="create_ipspaces_01.html">
+        Create IPspaces
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_ipspaces.html">
+        Display IPspaces
+      </a></li><li class=" "><a class="na-navbar-padding" href="delete_an_ipspace.html">
+        Delete an IPspace
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Configure broadcast domains (cluster administrators only)</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="configure_broadcast_domains_@cluster_administrators_only@_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="example_of_using_broadcast_domains.html">
+        Example of using broadcast domains
+      </a></li><li class=" "><a class="na-navbar-padding" href="add_or_remove_ports_from_a_broadcast_domain.html">
+        Add or remove ports from a broadcast domain
+      </a></li><li class=" "><a class="na-navbar-padding" href="split_broadcast_domains.html">
+        Split broadcast domains
+      </a></li><li class=" "><a class="na-navbar-padding" href="merge_broadcast_domains.html">
+        Merge broadcast domains
+      </a></li><li class=" "><a class="na-navbar-padding" href="change_the_mtu_value_for_ports_in_a_broadcast_domain.html">
+        Change the MTU value for ports in a broadcast domain
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_broadcast_domains.html">
+        Display broadcast domains
+      </a></li><li class=" "><a class="na-navbar-padding" href="delete_a_broadcast_domain.html">
+        Delete a broadcast domain
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Configure failover groups and policies for LIFs</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="configure_failover_groups_and_policies_for_lifs_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="create_a_failover_group.html">
+        Create a failover group
+      </a></li><li class=" "><a class="na-navbar-padding" href="configure_failover_settings_on_a_lif.html">
+        Configure failover settings on a LIF
+      </a></li><li class=" "><a class="na-navbar-padding" href="commands_for_managing_failover_groups_and_policies.html">
+        Commands for managing failover groups and policies
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Configure subnets (cluster administrators only)</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="configure_subnets_@cluster_administrators_only@_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="create_a_subnet.html">
+        Create a subnet
+      </a></li><li class=" "><a class="na-navbar-padding" href="add_or_remove_ip_addresses_from_a_subnet.html">
+        Add or remove IP addresses from a subnet
+      </a></li><li class=" "><a class="na-navbar-padding" href="change_subnet_properties.html">
+        Change subnet properties
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_subnets.html">
+        Display subnets
+      </a></li><li class=" "><a class="na-navbar-padding" href="delete_a_subnet.html">
+        Delete a subnet
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Configure LIFs (cluster administrators only)</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="configure_lifs_@cluster_administrators_only@_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="what_lifs_are.html">
+        What LIFs are
+      </a></li><li class=" "><a class="na-navbar-padding" href="lifs_and_service_policies.html">
+        LIFs and service policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="configure_lif_service_policies.html">
+        Configure LIF service policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="create_a_lif.html">
+        Create a LIF
+      </a></li><li class=" "><a class="na-navbar-padding" href="modify_a_lif.html">
+        Modify a LIF
+      </a></li><li class=" "><a class="na-navbar-padding" href="migrate_a_lif.html">
+        Migrate a LIF
+      </a></li><li class=" "><a class="na-navbar-padding" href="revert_a_lif_to_its_home_port.html">
+        Revert a LIF to its home port
+      </a></li><li class="  active "><a class="na-navbar-padding" href="recover_from_an_incorrectly_configured_cluster_lif.html">
+        Recover from an incorrectly configured cluster LIF
+      </a></li><li class=" "><a class="na-navbar-padding" href="delete_a_lif.html">
+        Delete a LIF
+      </a></li><li class=" "><a class="na-navbar-padding" href="configure_virtual_ip_@vip@_lifs.html">
+        Configure virtual IP (VIP) LIFs
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Configure host-name resolution</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="configure_host-name_resolution_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="configure_dns_for_host-name_resolution.html">
+        Configure DNS for host-name resolution
+      </a></li><li class=" "><a class="na-navbar-padding" href="manage_the_hosts_table_@cluster_administrators_only@.html">
+        Manage the hosts table (cluster administrators only)
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Balance network loads to optimize user traffic (cluster administrators only)</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="balance_network_loads_to_optimize_user_traffic_@cluster_administrators_only@_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="what_dns_load_balancing_is.html">
+        What DNS load balancing is
+      </a></li><li class=" "><a class="na-navbar-padding" href="how_dns_load_balancing_works.html">
+        How DNS load balancing works
+      </a></li><li class=" "><a class="na-navbar-padding" href="create_a_dns_load_balancing_zone.html">
+        Create a DNS load balancing zone
+      </a></li><li class=" "><a class="na-navbar-padding" href="add_or_remove_a_lif_from_a_load_balancing_zone.html">
+        Add or remove a LIF from a load balancing zone
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Secure your network</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="configure_network_security_using_federal_information_processing_standards_@fips@.html">
+        Configure network security using Federal Information Processing Standards (FIPS)
+      </a></li><li class=" "><a class="na-navbar-padding" href="configure_ip_security_@ipsec@_over_wire_encryption.html">
+        Configure IP security (IPsec) over wire encryption
+      </a></li><li class=" "><a class="na-navbar-padding" href="configure_firewall_policies_for_lifs.html">
+        Configure firewall policies for LIFs
+      </a></li><li class=" "><a class="na-navbar-padding" href="commands_for_managing_firewall_service_and_policies.html">
+        Commands for managing firewall service and policies
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Configure QoS marking (cluster administrators only)</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="configure_qos_marking_@cluster_administrators_only@_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="dscp_marking_for_uc_compliance.html">
+        DSCP marking for UC compliance
+      </a></li><li class=" "><a class="na-navbar-padding" href="modify_qos_marking_values.html">
+        Modify QoS marking values
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_qos_marking_values.html">
+        Display QoS marking values
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage SNMP on the cluster (cluster administrators only)</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="manage_snmp_on_the_cluster_@cluster_administrators_only@_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="what_mibs_are.html">
+        What MIBs are
+      </a></li><li class=" "><a class="na-navbar-padding" href="snmp_traps.html">
+        SNMP traps
+      </a></li><li class=" "><a class="na-navbar-padding" href="create_an_snmp_community_and_assigning_it_to_a_lif.html">
+        Create an SNMP community and assign it to a LIF
+      </a></li><li class=" "><a class="na-navbar-padding" href="configure_snmpv3_users_in_a_cluster.html">
+        Configure SNMPv3 users in a cluster
+      </a></li><li class=" "><a class="na-navbar-padding" href="configure_traphosts_to_receive_snmp_notifications.html">
+        Configure traphosts to receive SNMP notifications
+      </a></li><li class=" "><a class="na-navbar-padding" href="commands_for_managing_snmp.html">
+        Commands for managing SNMP
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Manage routing in an SVM</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="manage_routing_in_an_svm_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="create_a_static_route.html">
+        Create a static route
+      </a></li><li class=" "><a class="na-navbar-padding" href="enable_multipath_routing.html">
+        Enable multipath routing
+      </a></li><li class=" "><a class="na-navbar-padding" href="delete_a_static_route.html">
+        Delete a static route
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_routing_information.html">
+        Display routing information
+      </a></li><li class=" "><a class="na-navbar-padding" href="remove_dynamic_routes_from_routing_tables.html">
+        Remove dynamic routes from routing tables
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ONTAP port usage on a storage system</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="ontap_port_usage_on_a_storage_system_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="network_ports.html">
+        Network ports
+      </a></li><li class=" "><a class="na-navbar-padding" href="ontap_internal_ports.html">
+        ONTAP internal ports
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> View network information</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="view_network_information_overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_network_port_information_@cluster_administrators_only@.html">
+        Display network port information (cluster administrators only)
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_information_about_a_vlan_@cluster_administrators_only@.html">
+        Display information about a VLAN (cluster administrators only)
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_interface_group_information_@cluster_administrators_only@.html">
+        Display interface group information (cluster administrators only)
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_lif_information.html">
+        Display LIF information
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_routing_information_01.html">
+        Display routing information
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_dns_host_table_entries_@cluster_administrators_only@.html">
+        Display DNS host table entries (cluster administrators only)
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_dns_domain_configurations.html">
+        Display DNS domain configurations
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_information_about_failover_groups.html">
+        Display information about failover groups
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_lif_failover_targets.html">
+        Display LIF failover targets
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_lifs_in_a_load_balancing_zone.html">
+        Display LIFs in a load balancing zone
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_cluster_connections.html">
+        Display cluster connections
+      </a></li><li class=" "><a class="na-navbar-padding" href="commands_for_diagnosing_network_problems.html">
+        Commands for diagnosing network problems
+      </a></li><li class=" "><a class="na-navbar-padding" href="display_network_connectivity_with_neighbor_discovery_protocols.html">
+        Display network connectivity with neighbor discovery protocols
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="get_more_information.html">
+        Get more information
+      </a></li></ul></li></ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      
+
+
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Recover from an incorrectly configured cluster LIF</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2020-12-14 19:23:31 +0000">12/14/2020</time>
+    
+  
+
+<span>Contributors
+</span>
+
+
+  <span>
+    <a target="_blank" href="/ontap/pdfs/pages/networking-app/recover_from_an_incorrectly_configured_cluster_lif.pdf" role="button">
+      <img src="/ontap/images/pdf.png" width="20" height="20"/>Download PDF of this page</a>
+  </span>
+
+
+</p>
+
+
+<div class="paragraph lead">
+<p>A cluster cannot be created when the cluster network is cabled to a switch but not all of the ports configured in the Cluster IPspace can reach the other ports configured in the Cluster IPspace.</p>
+</div>
+<div class="paragraph">
+<p><strong>About this task</strong></p>
+</div>
+<div class="paragraph">
+<p>In a switched cluster, if a cluster network interface (LIF) is configured on the wrong port, or if a cluster port is wired into the wrong network, the <code>cluster create</code> command can fail with the following error:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Not all local cluster ports have reachability to one another.
+Use the "network port reachability show -detail" command for more details.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The results of the <code>network port show</code> command might show that several ports are added to the Cluster IPspace because they are connected to a port that is configured with a cluster LIF. However, the results of the <code>network port</code> <code>reachability show -detail</code> command reveal which ports do not have connectivity to one another.</p>
+</div>
+<div class="paragraph">
+<p>To recover from a cluster LIF configured on a port that is not reachable to the other ports configured with cluster LIFs, perform the following steps:</p>
+</div>
+<div class="paragraph">
+<p><strong>Steps</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Reset the home port of the cluster LIF to the correct port:</p>
+<div class="literalblock">
+<div class="content">
+<pre>net port modify -home-port</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Remove the ports that do not have cluster LIFs configured on them from the cluster broadcast domain:</p>
+<div class="literalblock">
+<div class="content">
+<pre>net port broadcast-domain remove-ports</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create the cluster:</p>
+<div class="literalblock">
+<div class="content">
+<pre>cluster create</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Result</strong></p>
+</div>
+<div class="paragraph">
+<p>When you complete the cluster creation, the system detects the correct configuration and places the ports into the correct broadcast domains.</p>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div class="page-nav-contribute"  >
+      <div class="page-nav-contribute-title">CONTRIBUTE</div>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/master/networking-app/recover_from_an_incorrectly_configured_cluster_lif.adoc" class="btn btn-default githubEditButton" role="button"><img src="/ontap/images/github.png" class="github-icon" />Edit on GitHub</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Recover from an incorrectly configured cluster LIF](https://docs.netapp.com/us-en/ontap/networking-app/recover_from_an_incorrectly_configured_cluster_lif.html)" class="btn btn-default githubEditButton" role="button"><img src="/ontap/images/github.png" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >Contributor's Guide</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2020 NetApp</a>
+            </li>
+            <li class="n-footer__language">
+              <!-- <a class="n-footer__corp-link modaal" href="#n-language-selector-menu" data-modaal-scope="modaal_154143812867626e487b1a03c9"> -->
+              <a class="n-footer__corp-link modaal" href="#n-language-selector-menu">
+                <svg class="n-icon-baseline-language" aria-labelledby="title">
+                  <title>netapp-globe</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#globe"></use>
+                </svg>
+                English
+              </a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ontap/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Have feedback for our website?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">Let us know</a>
+  <a href="https://docs.netapp.com/us-en/announcements/" class="n-footer__copyright">Announcements</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ontap/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ontap/js/prism.js'></script>
+      <script type="text/javascript" src='/ontap/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ontap/js/www-ntap.js'></script>
+  </body>
+
+  
+</html>

@@ -13,6 +13,48 @@
   
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/add_or_remove_a_lif_from_a_load_balancing_zone.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/add_or_remove_ip_addresses_from_a_subnet.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/add_or_remove_ports_from_a_broadcast_domain.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/balance_network_loads_to_optimize_user_traffic_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/balance_network_loads_to_optimize_user_traffic_@cluster_administrators_only@_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/change_subnet_properties.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/networking-app/change_the_mtu_value_for_ports_in_a_broadcast_domain.html</loc>
       
       <lastmod>2020-12-09T21:51:53+00:00</lastmod>
@@ -30,6 +72,20 @@
       <loc>https://docs.netapp.com/us-en/ontap/networking-app/commands_for_diagnosing_network_problems.html</loc>
       
       <lastmod>2020-12-09T21:51:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/commands_for_managing_failover_groups_and_policies.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/commands_for_managing_firewall_service_and_policies.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
       
     </url>
   
@@ -167,9 +223,184 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_broadcast_domains_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_broadcast_domains_@cluster_administrators_only@_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_dns_for_host-name_resolution.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_dns_services.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_failover_groups_and_policies_for_lifs.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_failover_groups_and_policies_for_lifs_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_failover_settings_on_a_lif.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_firewall_policies_for_lifs.html</loc>
       
       <lastmod>2020-12-09T21:51:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_host-name_resolution.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_host-name_resolution_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_ip_security_@ipsec@_over_wire_encryption.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_ipspaces_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_ipspaces_@cluster_administrators_only@_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_lif_service_policies.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_lifs_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_lifs_@cluster_administrators_only@_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_network_ports_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_network_ports_@cluster_administrators_only@_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_network_security_using_federal_information_processing_standards_@fips@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_qos_marking_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_qos_marking_@cluster_administrators_only@_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_snmpv3_users_in_a_cluster.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_subnets_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_subnets_@cluster_administrators_only@_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_traphosts_to_receive_snmp_notifications.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/configure_virtual_ip_@vip@_lifs.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
       
     </url>
   
@@ -188,6 +419,55 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/create_a_dns_load_balancing_zone.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/create_a_failover_group.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/create_a_lif.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/create_a_static_route.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/create_a_subnet.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/create_an_snmp_community_and_assigning_it_to_a_lif.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/create_ipspaces.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/networking-app/create_ipspaces_01.html</loc>
       
       <lastmod>2020-12-09T21:51:53+00:00</lastmod>
@@ -195,9 +475,128 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/create_lifs.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/create_svms.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/networking-app/decide_whether_to_use_this_network_management_guide.html</loc>
       
       <lastmod>2020-12-09T21:51:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/delete_a_broadcast_domain.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/delete_a_lif.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/delete_a_static_route.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/delete_a_subnet.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/delete_an_ipspace.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_broadcast_domains.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_cluster_connections.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_dns_domain_configurations.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_dns_host_table_entries_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_information_about_a_vlan_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_information_about_failover_groups.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_interface_group_information_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_ipspaces.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_lif_failover_targets.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_lif_information.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
       
     </url>
   
@@ -223,6 +622,76 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_qos_marking_values.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_routing_information.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_routing_information_01.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/display_subnets.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/dscp_marking_for_uc_compliance.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/enable_multipath_routing.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/example_of_using_broadcast_domains.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/example_of_using_ipspaces.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/get_more_information.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/how_dns_load_balancing_works.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/</loc>
       
       <lastmod>2020-11-04T21:40:48+00:00</lastmod>
@@ -244,9 +713,79 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/lifs_and_service_policies.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/manage_routing_in_an_svm.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/manage_routing_in_an_svm_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/manage_snmp_on_the_cluster_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/networking-app/manage_snmp_on_the_cluster_@cluster_administrators_only@_overview.html</loc>
       
       <lastmod>2020-12-09T21:51:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/manage_the_hosts_table_@cluster_administrators_only@.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/merge_broadcast_domains.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/migrate_a_lif.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/modify_a_lif.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/modify_mtu_setting_for_interface_group_ports.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/modify_network_port_attributes.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
       
     </url>
   
@@ -258,9 +797,30 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/monitor_the_health_of_network_ports.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/networking-app/monitor_the_reachability_of_network_ports.html</loc>
       
       <lastmod>2020-12-09T21:51:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/move_broadcast_domains.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/network_cabling_guidelines.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
       
     </url>
   
@@ -272,6 +832,55 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/network_ports.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/networking_components_of_a_cluster.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/networking_components_of_a_cluster_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/ontap_internal_ports.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/ontap_port_usage_on_a_storage_system.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/ontap_port_usage_on_a_storage_system_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/recover_from_an_incorrectly_configured_cluster_lif.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/reference_legal_notices.html</loc>
       
       <lastmod>2019-09-09T19:52:30+00:00</lastmod>
@@ -279,16 +888,58 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/relationship_between_broadcast_domains,_failover_groups,_and_failover_policies.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/remove_dynamic_routes_from_routing_tables.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/removing_a_nic_from_the_node.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/repair_port_reachability.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/revert_a_lif_to_its_home_port.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/smbc/search.html</loc>
       
-      <lastmod>2020-12-14T17:55:32+00:00</lastmod>
+      <lastmod>2020-12-14T19:58:55+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
       
-      <lastmod>2020-12-14T17:55:24+00:00</lastmod>
+      <lastmod>2020-12-14T19:58:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/secure_your_network.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
       
     </url>
   
@@ -548,6 +1199,27 @@
       <loc>https://docs.netapp.com/us-en/ontap/smbc/smbc_troubleshoot_volume_move_stuck_when_primary_down.html</loc>
       
       <lastmod>2020-12-04T18:50:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/snmp_traps.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/split_broadcast_domains.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/standard_properties_of_ipspaces.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
       
     </url>
   
@@ -1112,9 +1784,79 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/types_of_network_ports.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/pgrade_considerations.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/networking-app/verify_your_network_configuration_after_upgrading.html</loc>
       
       <lastmod>2020-12-09T21:51:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/view_network_information.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/view_network_information_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/what_dns_load_balancing_is.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/what_lifs_are.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/what_mibs_are.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/workflow__nas_path_failover.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/workflow__nas_path_failover_overview.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/networking-app/worksheet_for_nas_path_failover_configuration.html</loc>
+      
+      <lastmod>2020-12-14T19:23:31+00:00</lastmod>
       
     </url>
   
