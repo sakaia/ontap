@@ -786,7 +786,7 @@
 <p class="page-details">
   
     
-    <time datetime="2020-12-04 18:50:42 +0000">12/04/2020</time>
+    <time datetime="2020-12-18 18:31:42 +0000">12/18/2020</time>
     
   
 
@@ -832,21 +832,36 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Delete the zero RTO consistency group relationship:</p>
+<p>Verify that a common Snapshot copy exists between the source and destination volumes on both the source and destination cluster:</p>
 <div class="paragraph">
-<p><code>destination::&gt;snapmirror delete -destination-path vs1_dst:/cg/cg_dst</code></p>
+<p><code>source::&gt;snapshot show -vserver vs1_src -volume vol_src3 -snapshot snapmirror*</code></p>
+</div>
+<div class="paragraph">
+<p><code>destination::&gt;snapshot show -vserver vs1_dst -volume vol_dst3 -snapshot snapmirror*</code></p>
 </div>
 </li>
 <li>
-<p>Release the source side SnapMirror relationship and retain common Snapshot copies:</p>
+<p>If no common Snapshot copy exists, create and initialize a FlexVol SnapMirror relationship:</p>
 <div class="paragraph">
-<p><code>source::&gt;snapmirror release -relationship-info-only true -destination-path vs1_dst:/cg/cg_dst</code></p>
+<p><code>Destination::&gt; snapmirror initialize -source-path vs1_src:vol_src3 -destination-path vs1_dst:vol_dst3</code></p>
+</div>
+</li>
+<li>
+<p>Delete the zero RTO consistency group relationship:</p>
+<div class="paragraph">
+<p><code>destination::&gt;snapmirror delete -destination-path vs1_dst:vol_dst3</code></p>
+</div>
+</li>
+<li>
+<p>Release the source SnapMirror relationship and retain the common Snapshot copies:</p>
+<div class="paragraph">
+<p><code>source::&gt;snapmirror release -relationship-info-only true -destination-path vs1_dst:vol_dst3</code></p>
 </div>
 </li>
 <li>
 <p>Create the new consistency group with the new composition:</p>
 <div class="paragraph">
-<p><code>destination::&gt; snapmirror create -source-path vs1_src:/cg/cg_src -destination-path vs1_dst:/cg/cg_dst -cg-item-mappings vol_src2:@vol_dst2</code></p>
+<p><code>destination::&gt;snapmirror create -source-path vs1_src:/cg/cg_src -destination-path vs1_dst:/cg/cg_dst -cg-item-mappings vol_src1:@vol_dst1, vol_src2:@vol_dst2, vol_src3:@vol_dst3</code></p>
 </div>
 </li>
 <li>
